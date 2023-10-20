@@ -1,0 +1,52 @@
+<app-banner></app-banner>
+<!-- Clases de Joyería -->
+<app-destacados></app-destacados>
+<div class="padding text-center" id="sli">
+    <a (click)="gotoCursos()">
+        <button class="btn btn-outline-ursi"> Ver Todos los cursos</button>
+    </a>
+</div>
+
+<div class="clear"></div>
+<div class="call-to-action-style-1">
+    <img class="rellax bg-overlay " src="./assets/images/call-to-action/ursi2.jpg" alt="ursi galletti taller escuela orfebreria" />
+    <div class="overlay-call-to-action"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-push-6">
+                <h1><b> Premios </b></h1>
+                <p>Septiembre 2004 Premio accésit, 1er premio Salón Nacional de las Artes del Fuego, edición 31 Galería Braulio Salazar, Valencia Venezuela <br><br>
+                    <b>AGOSTO 1.997</b> Primer Premio de Esmalte Sobre Metal. IV Bienal de Pto. La Cruz, Venezuela
+                    <br><br>
+                    <b>FEBRERO 1.996</b> Premio Universidad de Carabobo. XXIII Salón de Las Artes del Fuego Valencia, Venezuela
+                </p>
+                <br><br>
+                <h1><b> Actualmente </b></h1>
+                <p>Desde el año 2011 hasta la actualidad realiza giras por Panamá, Miami, Orlando, Atlanta y Houston dictando talleres con su taller móvil</p>
+
+                <a (click)="gotoAbout()">
+                    <button class="btn btn-outline-ursi"> Conoce más</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog -->
+<section class="boxed-sm blog">
+    <div class="container">
+        <div class="row">
+            <div class="padding text-center">
+                <h1>Blog</h1>
+            </div>
+            <div class="row ">
+                <div class="grid-sizer"></div>
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <app-blog-featured></app-blog-featured>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <app-lateral></app-lateral>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

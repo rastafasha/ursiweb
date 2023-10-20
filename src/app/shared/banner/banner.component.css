@@ -1,0 +1,30 @@
+.carousel {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+
+@media(min-width:768px){
+    .movil{
+        opacity: 0;
+    }
+    .desktop{
+        opacity: 1;
+    }
+}
+@media(max-width:768px){
+    .movil{
+        opacity: 1;
+    }
+    .desktop{
+        opacity: 0;
+    }
+
+}

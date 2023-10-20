@@ -1,0 +1,52 @@
+<section class="sub-header shop-layout-1">
+    <img class="rellax bg-overlay" src="./assets/images/slider/1.jpg" alt="ursi galletti taller escuela orfebreria cursos">
+    <div class="overlay-call-to-action"></div>
+    <h3 class="heading-style-3">Todos nuestros Cursos</h3>
+</section>
+
+
+<section class="boxed-sm padding" id="cursos">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9">
+                <!-- buscador -->
+                <form class="form-horizontal" style="margin-bottom: 20px;">
+                    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                        <div class="input-group">
+                            <input type="search" name="search"  type="text" class="form-control col-xs-12 buscador" placeholder="Buscar.." [(ngModel)]="query" aria-describedby="button-addon1">
+                            <div class="input-group-append botonn">
+                                <button id="button-addon1" type="submit" class="btn btn-link text-primary" (click)="search()" name="submit" data-toggle="tooltip" title="mostrar todos"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- buscador -->
+                <div class="desktop">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    <div *ngFor="let product of cursos |  paginate: { itemsPerPage: count, currentPage: p }">
+                        <div class="col-xs-6 col-sm-4">
+                            <app-product-item [product]="product"></app-product-item>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+                <div class="movil">
+                    <app-virtual></app-virtual>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div *ngIf="!user">
+                    <h4>Inicia Sesión o <br> Registrate para ver todo y comprar</h4>
+                    <a (click)="gotoLogin()" class="cursor btn btn-outline-ursi">ir al login</a>
+                </div>
+                <div *ngIf="user">
+                    <app-cart></app-cart>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<app-modal-producto></app-modal-producto>
