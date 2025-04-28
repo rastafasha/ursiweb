@@ -4,7 +4,8 @@
     <h3 class="heading-style-3">Joyas de la Gran Pantalla</h3>
 </section>
 
-<section class="boxed-sm" id="info">
+<app-loading *ngIf="isLoading" ></app-loading>
+<section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container ">
         <div class="masonry">
             <div class="item" *ngFor="let joya of joyas">

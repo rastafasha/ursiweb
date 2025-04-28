@@ -9,6 +9,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../pipes/pipes.module';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -18,14 +19,16 @@ import { PipesModule } from '../pipes/pipes.module';
     HeaderComponent,
     FooterComponent,
     LateralComponent,
-    BlogListComponent
+    BlogListComponent,
+    LoadingComponent
   ],
   exports: [
     BannerComponent,
     HeaderComponent,
     FooterComponent,
     LateralComponent,
-    BlogListComponent
+    BlogListComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,

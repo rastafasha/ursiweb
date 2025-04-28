@@ -10,6 +10,7 @@ import { EscuelaService } from 'src/app/services/escuela.service';
 })
 export class EscuelaComponent implements OnInit {
 
+  isLoading = false;
   escuelas: Escuela;
   error: string;
   msm_error: string;
@@ -27,11 +28,12 @@ export class EscuelaComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.escuelaService.getEscuelas().subscribe(
       res =>{
         this.escuelas = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

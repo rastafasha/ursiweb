@@ -5,7 +5,9 @@
 </section>
 
 
-<section class="boxed-sm" id="info">
+<app-loading *ngIf="isLoading" ></app-loading>
+
+<section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container">
         <div class="row padding">
             <div class="curso-cronograma " *ngFor="let cronologiacurso of cronologiacursos">

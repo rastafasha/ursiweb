@@ -4,9 +4,9 @@
     <h3 class="heading-style-3">Herramientas</h3>
 </section>
 <!---cursos--->
+<app-loading *ngIf="isLoading" ></app-loading>
 
-
-<section class="boxed-sm" id="info">
+<section class="boxed-sm" id="info"  *ngIf="!isLoading">
     <div class="container" *ngFor="let herramienta of herramientas">
         <div class="row padding">
             <div class="herramientas animated fadeInUp">

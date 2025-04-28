@@ -8,7 +8,7 @@ import { CursosService } from 'src/app/services/cursos.service';
   styleUrls: ['./destacados.component.css']
 })
 export class DestacadosComponent implements OnInit{
-
+  isLoading: boolean = false;
   cursos: Curso;
   error:string;
 
@@ -22,10 +22,12 @@ export class DestacadosComponent implements OnInit{
   }
 
   getPosts(): void {
+    this.isLoading = true;
     this.cursoService.getCursosDestacados().subscribe(
       res =>{
         this.cursos = res;
         error => this.error = error;
+        this.isLoading = false;
       }
     );
 

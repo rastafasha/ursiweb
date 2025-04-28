@@ -9,7 +9,7 @@ import { PulseraService } from 'src/app/services/pulsera.service';
   styleUrls: ['./pulseras.component.css']
 })
 export class PulserasComponent implements OnInit {
-
+  isLoading = false;
   pulseras: Pulsera;
   error: string;
   msm_error: string;
@@ -27,11 +27,12 @@ export class PulserasComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.pulseraService.getPulseras().subscribe(
       res =>{
         this.pulseras = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

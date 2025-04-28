@@ -3,7 +3,8 @@
     <div class="overlay-call-to-action"></div>
     <!-- <h3 class="heading-style-3">{{curso.name}}</h3> -->
 </section>
-<section class="boxed-sm" id="info">
+<app-loading *ngIf="isLoading" ></app-loading>
+<section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container">
         <div class="row padding">
             <div class="col-xs-12 col-md-9">

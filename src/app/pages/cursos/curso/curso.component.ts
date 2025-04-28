@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/services/message.service';
   styleUrls: ['./curso.component.css']
 })
 export class CursoComponent implements OnInit {
-
+  isLoading: boolean = false;
   curso: Curso;
   currentSlug!:string | null;
   slug:any;
@@ -31,10 +31,12 @@ export class CursoComponent implements OnInit {
     const slug = this.activatedRoute.snapshot.paramMap.get('slug');
 
     this.slug = slug;
+    this.isLoading = true;
     this.cursoService.getCursoBySlug(this.slug).subscribe(
       res => {
         this.curso = res[0];
-        console.log(this.curso);
+        // console.log(this.curso);
+        this.isLoading = false;
       }
     );
 

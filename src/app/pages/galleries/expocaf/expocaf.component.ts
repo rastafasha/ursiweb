@@ -10,6 +10,7 @@ import { ExpocafService } from 'src/app/services/expocaf.service';
 })
 export class ExpocafComponent implements OnInit {
 
+  isLoading = false;
   expocafs: Expocaf;
   error: string;
   msm_error: string;
@@ -27,11 +28,12 @@ export class ExpocafComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.expocafService.getExpocafs().subscribe(
       res =>{
         this.expocafs = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

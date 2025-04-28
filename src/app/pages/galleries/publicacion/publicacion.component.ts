@@ -10,7 +10,7 @@ import {environment} from 'src/environments/environment';
 })
 export class PublicacionComponent implements OnInit {
 
-
+  isLoading = false;
   media = environment.apiUrlMedia;
   publicaciones: Publicacion;
   error: string;
@@ -29,11 +29,12 @@ export class PublicacionComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.publicacionService.getPublicacions().subscribe(
       res =>{
         this.publicaciones = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

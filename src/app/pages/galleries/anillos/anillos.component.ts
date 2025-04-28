@@ -10,6 +10,7 @@ import { AnilloService } from 'src/app/services/anillo.service';
 })
 export class AnillosComponent implements OnInit {
 
+  isLoading = false;
   anillos: Anillo;
   error: string;
   msm_error: string;
@@ -27,11 +28,12 @@ export class AnillosComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.anilloService.getAnillos().subscribe(
       res =>{
         this.anillos = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

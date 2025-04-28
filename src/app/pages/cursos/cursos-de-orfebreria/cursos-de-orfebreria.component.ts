@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CursosDeOrfebreriaComponent implements OnInit {
   
+  isLoading: boolean = false;
   error: string;
   public user: User;
   id:number;
@@ -21,6 +22,8 @@ export class CursosDeOrfebreriaComponent implements OnInit {
   cursos: any;
 
   query:string ='';
+
+  isEdnOfList = false;
 
 
 
@@ -49,10 +52,12 @@ export class CursosDeOrfebreriaComponent implements OnInit {
 
 
   loadCursos(){
+    this.isLoading = true;
     this.cursoService.getCursosActivos().subscribe(
       res =>{
         this.cursos = res;
         error => this.error = error
+        this.isLoading = false;
         // console.log(this.cursos);
       }
     );
@@ -93,6 +98,27 @@ export class CursosDeOrfebreriaComponent implements OnInit {
         }
       });
   }
+
+  // onScrollDown(){
+  //   if (!this.nextUrl || this.isLoading) return;
+  //   this.favoriteService.getCharacters(this.nextUrl).subscribe({
+  //     next: (resp: any) => {
+  //       if (resp.info.next) {
+  //         this.nextUrl = resp.info.next;
+  //         this.characters = [...this.characters, ...resp.results];
+  //       } else {
+  //         this.isEdnOfList = true;
+  //         this.loadingTitle = 'No hay más personajes para mostrar';
+  //         alert('ultima pagina');
+  //       }
+  //     },
+  //     error: () => {
+  //       this.isLoading = false;
+  //     }
+  //   });
+  // }
+
+
 
 
 

@@ -10,6 +10,7 @@ import { AreteService } from 'src/app/services/arete.service';
 })
 export class AretesComponent implements OnInit {
 
+  isLoading = false;
   aretes: Arete;
   error: string;
   msm_error: string;
@@ -27,11 +28,12 @@ export class AretesComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.areteService.getAretes().subscribe(
       res =>{
         this.aretes = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

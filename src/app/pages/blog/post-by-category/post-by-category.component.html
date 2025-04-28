@@ -3,8 +3,9 @@
     <div class="overlay-call-to-action"></div>
     <h3 class="heading-style-3">Categoría: {{category.name}}</h3>
 </section>
+<app-loading *ngIf="isLoading" ></app-loading>
 
-<section class="boxed-sm blog pt-3">
+<section class="boxed-sm blog pt-3" *ngIf="!isLoading">
     <div class="container">
         <div class="col-xs-12 col-sm-8 col-md-8">
 

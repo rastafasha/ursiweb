@@ -8,7 +8,7 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./blog-featured.component.css']
 })
 export class BlogFeaturedComponent implements OnInit{
-
+  isLoading: boolean = false;
   blogs: Post;
   error:string;
 
@@ -22,10 +22,12 @@ export class BlogFeaturedComponent implements OnInit{
   }
 
   getPosts(): void {
+    this.isLoading = true;
     this.blogService.getFeaturedPosts().subscribe(
       res =>{
         this.blogs = res;
         error => this.error = error;
+        this.isLoading = false;
       }
     );
 

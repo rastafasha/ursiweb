@@ -9,7 +9,7 @@ import { JoyaService } from 'src/app/services/joya.service';
   styleUrls: ['./joyas.component.css']
 })
 export class JoyasComponent  implements OnInit {
-
+  isLoading = false;
   joyas: Joya;
   error: string;
   msm_error: string;
@@ -27,11 +27,12 @@ export class JoyasComponent  implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.joyaService.getJoyas().subscribe(
       res =>{
         this.joyas = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

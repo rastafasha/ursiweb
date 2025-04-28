@@ -3,8 +3,9 @@
     <div class="overlay-call-to-action"></div>
     <h3 class="heading-style-3">Publicaciones</h3>
 </section>
+<app-loading *ngIf="isLoading"></app-loading>
 
-<section class="boxed-sm" id="info">
+<section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container">
         <div class="masonry">
             <div class="item" *ngFor="let publicacion of publicaciones">

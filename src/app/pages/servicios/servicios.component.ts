@@ -9,7 +9,7 @@ import { ServiciosService } from '../../services/servicios.service';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit{
-
+  isLoading = false;
   services: Servicio;
   error: string;
   msm_error: string;
@@ -27,10 +27,12 @@ export class ServiciosComponent implements OnInit{
   }
 
   getServicios(): void {
+    this.isLoading = true;
     this.servicioService.getServicios().subscribe(
       res =>{
         this.services = res;
         error => this.error = error
+        this.isLoading = false;
         // console.log(this.herramientas);
       }
     );

@@ -12,6 +12,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class PostByCategoryComponent implements OnInit{
 
+  isLoading: boolean = false;
   posts: Post;
   category:Category;
   error:string;
@@ -38,11 +39,12 @@ export class PostByCategoryComponent implements OnInit{
   }
 
   getPosts(id): void {
+    this.isLoading = true;
     this.blogService.getPostByCategory(id).subscribe(
       res =>{
         this.posts = res;
         error => this.error = error
-        console.log(this.posts);
+        this.isLoading = false;
       }
     );
   }

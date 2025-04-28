@@ -9,6 +9,7 @@ import { CronologiacursosService } from 'src/app/services/cronologiacursos.servi
 })
 export class CronogramaDeCursosComponent implements OnInit{
 
+  isLoading: boolean = false;
   cronologiacursos: Cronologiacurso;
   error:string;
 
@@ -22,10 +23,12 @@ export class CronogramaDeCursosComponent implements OnInit{
   }
 
   getCronogramas(): void {
+    this.isLoading = true;
     this.cronogramaService.getCronologiacursos().subscribe(
       res =>{
         this.cronologiacursos = res;
         error => this.error = error
+        this.isLoading = false;
         // console.log(this.cronologiacursos);
       }
     );

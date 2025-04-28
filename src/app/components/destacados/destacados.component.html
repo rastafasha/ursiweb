@@ -1,4 +1,6 @@
-<section class="boxed-sm" id="cursos">
+<app-loading *ngIf="isLoading" ></app-loading>
+
+<section class="boxed-sm" id="cursos" *ngIf="!isLoading">
     <div class="container">
         <div class="row">
             <div class="padding text-center">

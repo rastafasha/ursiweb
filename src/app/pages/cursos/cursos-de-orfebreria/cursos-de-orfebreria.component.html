@@ -4,8 +4,9 @@
     <h3 class="heading-style-3">Todos nuestros Cursos</h3>
 </section>
 
+<app-loading *ngIf="isLoading" ></app-loading>
 
-<section class="boxed-sm padding" id="cursos">
+<section class="boxed-sm padding" id="cursos" *ngIf="!isLoading">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-9">

@@ -9,6 +9,7 @@ import { HerramientaService } from 'src/app/services/herramienta.service';
 })
 export class HerramientasComponent implements OnInit {
 
+  isLoading = false;
   herramientas: Herramienta;
   error: string;
   msm_error: string;
@@ -26,11 +27,12 @@ export class HerramientasComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.herramientaService.getHerramientas().subscribe(
       res =>{
         this.herramientas = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

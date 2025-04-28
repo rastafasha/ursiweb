@@ -3,9 +3,9 @@
     <div class="overlay-call-to-action"></div>
     <h3 class="heading-style-3">Aretes</h3>
 </section>
+<app-loading *ngIf="isLoading" ></app-loading>
 
-
-<section class="boxed-sm" id="info">
+<section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container">
         <div class="row padding" *ngFor="let arete of aretes">
             <!-- arete -->

@@ -9,7 +9,7 @@ import { DijeService } from 'src/app/services/dije.service';
   styleUrls: ['./dijes.component.css']
 })
 export class DijesComponent implements OnInit {
-
+  isLoading = false;
   dijes: Dije;
   error: string;
   msm_error: string;
@@ -27,11 +27,12 @@ export class DijesComponent implements OnInit {
   }
 
   getServicios(): void {
-
+    this.isLoading = true;
     this.dijeService.getDijes().subscribe(
       res =>{
         this.dijes = res;
-        error => this.error = error
+        error => this.error = error;
+        this.isLoading = false;
       }
     );
   }
