@@ -23,7 +23,7 @@
                         <div class="desc">
                             <div class="header-desc">
                                 <h3 class="product-title">{{curso.name}}</h3>
-                                <p class="price">${{curso.price}}</p>
+                                <p class="price">{{curso.price | currency}}</p>
                             </div>
                             <div class="body-desc">
                                 <div *ngIf="curso.urlVideo">
@@ -34,7 +34,7 @@
                                 </div>
                                 <button class="btn btn-outline-ursi" (click)="addToCart()"> <i class="fa fa-shopping-cart"></i></button>
                                 <div class="sharing">
-                                    <h4>Compartir</h4>
+                                    <h4>{{'Compartir'|translate}}</h4>
                                     <share-buttons theme="circles-dark" [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']" [showIcon]="true" [showText]="false"
                                         url="https://ursigalletti.net/curso/{{curso.slug}}" description="{{curso.description}}" twitterAccount="@ursigalletti" class="pt-1">
                                     </share-buttons>

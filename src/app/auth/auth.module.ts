@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PasswordresetComponent } from './passwordreset/passwordreset.component';
 import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegistroComponent } from './registro/registro.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TranslateModule
   ]
 })
 export class AuthModule { }

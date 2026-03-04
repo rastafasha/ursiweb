@@ -21,7 +21,7 @@
         </div>
         <figcaption class="desc">
             <h3>{{product.name | slice:0:30 }}...</h3>
-            <p class="price">${{product.price}}</p><br>
+            <p class="price">{{product.price | currency}}</p><br>
             <div *ngIf="user">
                 <button class="btn btn-outline-ursi" (click)="addToCart()"> <i class="fa fa-shopping-cart"></i></button>
             </div>

@@ -1,7 +1,7 @@
 <section class="sub-header shop-layout-1">
     <img class="rellax bg-overlay" src="./assets/images/sub-header/profile.jpeg" alt="ursi galletti taller escuela orfebreria">
     <div class="overlay-call-to-action"></div>
-    <h3 class="heading-style-3">Mi Perfil</h3>
+    <h3 class="heading-style-3">{{'Mi Perfil'|translate}}</h3>
 </section>
 <div class="container mt-3 mb-3">
     <div class="profile">
@@ -19,18 +19,18 @@
                                 </div>
                             </div> -->
                             <div class="info">
-                                <h1>Bienvenido!</h1>
+                                <h1>{{'Bienvenido'|translate}}!</h1>
                                 <h3>{{user.username}}</h3>
                                 <p><b>Email:</b> {{user.email}}</p>
-                                <p><b>Miembro desde:</b> {{user.created_at | date:'mediumDate'}}</p>
+                                <p><b> {{'Miembro desde'|translate}}:</b> {{user.created_at | date:'mediumDate'}}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
-                                <p><b>Pais:</b> {{userprofile.profiles.pais}}</p>
-                                <p><b>Estado:</b> {{userprofile.profiles.estado}}</p>
-                                <p><b>Tel. home:</b> {{userprofile.profiles.telhome}}</p>
-                                <p><b>Tel. movil:</b> {{userprofile.profiles.telmovil}}</p>
+                                <p><b>{{'Pais'|translate}}:</b> {{userprofile.profiles.pais}}</p>
+                                <p><b>{{'Estado'|translate}}:</b> {{userprofile.profiles.estado}}</p>
+                                <p><b>{{'Tel. home'|translate}}:</b> {{userprofile.profiles.telhome}}</p>
+                                <p><b>{{'Tel. movil'|translate}}:</b> {{userprofile.profiles.telmovil}}</p>
                             </div>
                             <div class="col-xs-12 col-sm-4">
 
@@ -49,33 +49,33 @@
 
                             <div class="col-xs-12 ">
                                 <div class="col-xs-12 col-md-6">
-                                    <label>Nombres <span class="required">*</span></label>
+                                    <label>{{'Nombres'|translate}}: <span class="required">*</span></label>
                                     <input type="text" formControlName="nombre" class="form-control" required>
 
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <label>Apellidos <span class="required">*</span></label>
+                                    <label>{{'Apellidos'|translate}}: <span class="required">*</span></label>
                                     <input type="text" formControlName="surname" class="form-control" required>
 
                                 </div>
 
 
                                 <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">Pais</label>
+                                    <label for="exampleInputEmail1">{{'Pais'|translate}}</label>
                                     <input type="text" formControlName="pais" class="form-control">
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">Estado</label>
+                                    <label for="exampleInputEmail1">{{'Estado'|translate}}</label>
                                     <input type="text" formControlName="estado" class="form-control">
                                 </div>
 
                                 <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">Teléfonos Principal  <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">{{'Tel. home'|translate}}  <span class="required">*</span></label>
                                     <input type="text" formControlName="telhome" class="form-control" required>
 
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">Teléfonos Móvil  </label>
+                                    <label for="exampleInputEmail1">{{'Tel. movil'|translate}}  </label>
                                     <input type="text" formControlName="telmovil" class="form-control">
 
                                 </div>
@@ -83,7 +83,7 @@
                                 <hr>
                                 <div class="col-xs-12">
                                     <div>
-                                        <h4>Redes Sociales</h4>
+                                        <h4>{{'Redes Sociales'|translate}}</h4>
                                     </div>
                                     <div class="clear"></div>
                                     <div class="redes">
@@ -124,7 +124,7 @@
 
                         <input type="hidden" formControlName="id">
                         <div class="padding text-center">
-                            <button class="btn btn-outline-ursi m-r-10" type="submit" [disabled]="!perfilForm.valid">Guardar</button>
+                            <button class="btn btn-outline-ursi m-r-10" type="submit" [disabled]="!perfilForm.valid">{{'Guardar'|translate}}</button>
 
                         </div>
 
@@ -136,11 +136,11 @@
             <div class="col-12 col-sm-6 col-md-6">
                 <div class="card shadow-small padding">
                     <div class="card-body">
-                        <h4>Mis Compras</h4>
+                        <h4>{{'Mis Compras'|translate}}</h4>
                         <ul *ngFor="let payment of userprofile.payments |  paginate: { itemsPerPage: count, currentPage: p }">
                             <li>
                                 <a [routerLink]="['/user-account/payment-detail', payment.id]">
-                Referencia: {{payment.referencia}} | Fecha: {{payment.created_at | date:'MMM d, y, h:mm:ss a'}}
+                {{'Referencia'|translate}}: {{payment.referencia}} | {{'Fecha'|translate}}: {{payment.created_at | date:'MMM d, y, h:mm:ss a'}}
               </a>
                             </li>
                         </ul>

@@ -1,12 +1,12 @@
 <div *ngIf="cartItems.length < 1">
     <div class="alert alert-info text-center">
-        <h3>Pedido Vacio</h3>
+        <h3> {{'Pedido Vacio'| translate}}</h3>
         <i class="fa fa-shopping-cart"></i>
     </div>
 </div>
 <div *ngIf="cartItems.length > 0">
     <div class="alert alert-info text-center">
-        <h4>Tu Pedido</h4>
+        <h4>{{'Tu Pedido'|translate}} </h4>
     </div>
     <div class="text-center">
         <ul class="list-group">
@@ -23,10 +23,10 @@
         </ul>
     </div>
     <div class="alert alert-warning text-center">
-        <strong>Total: ${{total}}</strong>
+        <strong>Total: {{total|currency}}</strong>
     </div>
     <button class="btn btn-outline-danger btn-block col-12 mb-2" (click)="emptyCart()">
-    <i class="fa fa-ban"></i> Vaciar Pedido
+    <i class="fa fa-ban"></i> {{'Vaciar Pedido'|translate}}
   </button>
 
     <ngx-paypal [config]="payPalConfig"></ngx-paypal>

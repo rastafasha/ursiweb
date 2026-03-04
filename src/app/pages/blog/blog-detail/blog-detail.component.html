@@ -34,7 +34,7 @@
                         <div class="sapo" [innerHtml]="post.description | safe: 'html' "></div>
                         <div class="sharing">
 
-                            <h4>Compartir</h4>
+                            <h4>{{'Compartir'|translate}}</h4>
                             <share-buttons theme="circles-dark" [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']" [showIcon]="true" [showText]="false"
                                 url="https://ursigalletti.net/blog/{{post.slug}}" description="{{post.description}}" twitterAccount="@ursigalletti" class="pt-1">
                             </share-buttons>
@@ -43,7 +43,7 @@
                 </div>
                 <br>
                 <!-- post -->
-                <h4 class="text-center">Publicaciones Recientes</h4>
+                <h4 class="text-center">{{'Publicaciones Recientes'|translate}}</h4>
                 <app-blog-featured></app-blog-featured>
             </div>
             <!-- lateral -->

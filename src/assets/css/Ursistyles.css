@@ -157,6 +157,16 @@ a {
     padding: 40px 0;
 }
 
+.twocol{
+    column-count: 2;
+}
+
+@media(max-width:768px) {
+    .twocol{
+    column-count: 1;
+}
+}
+        
 .curso-cronograma {
     height: auto;
     margin-bottom: 30px;
