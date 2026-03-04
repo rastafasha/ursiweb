@@ -50,6 +50,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 // import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 // angular file uploader
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -124,7 +125,8 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     ShareIconsModule,
     // InfiniteScrollModule,
     NgxPaginationModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    TranslateModule
   ]
 })
 export class PagesModule { }

@@ -17,6 +17,7 @@ import { VirtualComponent } from './virtual/virtual.component';
 
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     ShareButtonsModule,
     ShareIconsModule,
-    ScrollingModule
+    ScrollingModule,
+    TranslateModule
   ]
 })
 export class ComponentsModule { }

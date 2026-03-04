@@ -21,7 +21,7 @@
                             </li>
                             <li>
                                 <span class="fa fa-whatsapp icon"></span>
-                                <a href="https://wa.me/18328976091" title="Facebook" target="_blank">+1-832-897.60.91</a>
+                                <a href="https://wa.me/18328976091" title="whatsapp" target="_blank">+1-832-897.60.91</a>
                             </li>
                             <li>
                                 <span class="lnr lnr-envelope icon"></span>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <div class=" widget-newsletter-footer">
-                    <h4 class="h4 heading">NEWSLETTER</h4>
-                    <p>Subscribete y mantente actualizado</p>
+                    <h4 class="h4 heading">{{ 'NEWSLETTER'|translate}}</h4>
+                    <p> {{ 'Subscribete y mantente actualizado'|translate}}</p>
                     <form [formGroup]="registerForm" (ngSubmit)="crearUsuario()" class="organic-form form-inline btn-add-on circle border">
                         <input type="hidden" formControlName="id">
                         <div class="form-group ">
@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="copy-right-inner">
-                    <p style="font-size:12px !important">Copyright © {{year}} Galletti Ursi Orfebre | Desarrollado por : <a href="http://www.malcolmcordova.com" target="_blank">malcolmcordova.com</a></p>
+                    <p style="font-size:12px !important">Copyright © {{year}} Galletti Ursi Orfebre | {{ 'Desarrollado por'|translate}}: <a href="https://www.malcolmcordova.com" target="_blank">malcolmcordova.com</a></p>
                     <div class="widget widget-footer widget-footer-creadit-card">
                         <ul class="list-unstyle">
                             <li><a href="https://facebook.com/163997566976018" target="_blank"><i

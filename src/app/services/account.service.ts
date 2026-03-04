@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {tap, map, catchError} from 'rxjs/operators';
+import { tap, map, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { LoginForm } from '../auth/interfaces/login-form.interface';
 
@@ -31,86 +31,82 @@ export class AccountService {
   constructor(
     private http: HttpClient,
     private router: Router
-    ) {
-      this.user;
-    }
+  ) {
+    this.user;
+  }
 
-    get token():string{
-      return localStorage.getItem('auth_token') || '';
-    }
+  get token(): string {
+    return localStorage.getItem('auth_token') || '';
+  }
 
-    get role(): 'SUPERADMIN' | 'ADMIN' | 'MEMBER' | 'GUEST' {
-      return this.user.role!;
-    }
+  get role(): 'SUPERADMIN' | 'ADMIN' | 'MEMBER' | 'GUEST' {
+    return this.user.role!;
+  }
 
 
 
-    get headers(){
-      return{
-        headers: {
-          'auth_token': this.token
-        }
+  get headers() {
+    return {
+      headers: {
+        'auth_token': this.token
       }
     }
+  }
 
-    getToken(){
-      const token = localStorage.getItem('auth_token');
-      return this.token;
-   }
+  getToken() {
+    const token = localStorage.getItem('auth_token');
+    return this.token;
+  }
 
 
-    guardarLocalStorage( user:any, access_token: any){
-      // localStorage.setItem('token', JSON.stringify(token));
+  guardarLocalStorage(user: any, access_token: any) {
+    // localStorage.setItem('token', JSON.stringify(token));
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('auth_token', access_token.original.access_token);
-    }
+  }
 
-
-
-
-
-  login(formData: LoginForm){
+  login(formData: LoginForm) {
 
     // return this.http.post<any>(`${this.serverUrl}/login`, {email: email, password: password}, { withCredentials: false })
 
 
     return this.http.post(`${this.serverUrl}/login`, formData)
-    .pipe(
-      tap((resp: any) => {
-        this.guardarLocalStorage(resp.user, resp.access_token);
+      .pipe(
+        tap((resp: any) => {
+          this.guardarLocalStorage(resp.user, resp.access_token);
 
-      })
-    )
+        })
+      )
 
   }
 
 
 
 
-  crearUsuario(formData: RegisterForm){
+  crearUsuario(formData: RegisterForm) {
     return this.http.post(`${this.serverUrl}/register`, formData)
-    .pipe(map(user => {
-      localStorage.setItem('auth_token', JSON.stringify(user));
+      .pipe(map(user => {
+        localStorage.setItem('auth_token', JSON.stringify(user));
 
-      return user;
-    }));
+        return user;
+      }));
   }
-  logoutserver(){
+  logoutserver() {
 
     const url = `${this.serverUrl}/logout`;
-    return this.http.get<any>(url,this.headers)
+    return this.http.get<any>(url, this.headers)
       .pipe(
-        map((resp:{ok: boolean}) => resp)
+        map((resp: { ok: boolean }) => resp)
       );
   }
 
-  getUsuario(id:number): Observable<any> {
+  getUsuario(id: number): Observable<any> {
 
     const url = `${this.serverUrl}/user/show/${id}`;
     return this.http.get<any>(url, this.headers)
       .pipe(
-        map((resp:{ok: boolean, user: User}) => resp.user)
-        );
+        map((resp: { ok: boolean, user: User }) => resp.user)
+      );
   }
 
   logout(): void {
@@ -122,7 +118,7 @@ export class AccountService {
   }
 
 
-   validarToken(): Observable<boolean>{
+  validarToken(): Observable<boolean> {
 
     // return this.http.get(`${this.serverUrl}/permisos`, {
     return this.http.post(`${this.serverUrl}/refresh`, {
@@ -137,14 +133,14 @@ export class AccountService {
           email,
           first_name,
           last_name,
-           is_active,
-           image,
-            created_at,
-            role,
-            member,
-              directorios,
-              pagos,
-          } = resp.user;
+          is_active,
+          image,
+          created_at,
+          role,
+          member,
+          directorios,
+          pagos,
+        } = resp.user;
 
         this.user = new User();
 
@@ -156,21 +152,21 @@ export class AccountService {
     );
   }
 
-  forgotPassword(formData:any){
+  forgotPassword(formData: any) {
     return this.http.post(`${this.serverUrl}/forgot-password`, formData)
 
   }
 
-  changePassword(formData:any){
+  changePassword(formData: any) {
     return this.http.post(`${this.serverUrl}/change-forgot-password`, formData)
 
   }
 
-  resetPassword(formData:PasswordForm){
+  resetPassword(formData: PasswordForm) {
     return this.http.post(`${this.serverUrl}/reset-password`, formData)
 
   }
-  newPassword(formData:PasswordForm){
+  newPassword(formData: PasswordForm) {
     return this.http.post(`${this.serverUrl}/change-password`, formData)
 
   }
