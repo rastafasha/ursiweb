@@ -8,6 +8,8 @@ export class Post {
   user_id: number;
   title?: string = "";
   description: string = "";
+  title_eng?: string = "";
+  description_eng: string = "";
   slug: string = "";
   is_featured: boolean;
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';

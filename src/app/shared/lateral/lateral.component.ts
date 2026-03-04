@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -20,6 +21,7 @@ export class LateralComponent implements OnInit{
     public categoryService: CategoryService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    public translate: TranslateService
   ){}
 
   ngOnInit(): void {

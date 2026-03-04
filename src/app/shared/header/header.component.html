@@ -57,19 +57,16 @@
             </ul>
         </li>
 
-       <li class="has-child-menu">
-                <a style="cursor: pointer;">
-                    <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
-                        (click)="cambiarLenguaje('en')"><span class="menu-item">Esp</span></a>
-                </a>
-            </li>
-            <li class="has-child-menu">
-                <a style="cursor: pointer;">
-                    <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
-                        (click)="cambiarLenguaje('es')"><span class="menu-item">Eng</span></a>
-
-                </a>
-            </li>
+        <li>
+            <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
+                (click)="cambiarLenguaje('en')"><span class="menu-item">Esp</span></a>
+            
+        </li>
+        <li>
+            <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
+                (click)="cambiarLenguaje('es')"><span class="menu-item">Eng</span></a>
+            
+        </li>
     </ul>
 </nav>
 <!-- header movil -->
@@ -89,11 +86,14 @@
                                 <li><a routerLink="acerca-de-ursi-galletti"> {{ 'Ursi Galletti'|translate}}</a></li>
                                 <li><a routerLink="aspecto-docente"> {{ 'Aspecto Docente'|translate}}</a></li>
                                 <li><a routerLink="aspecto-laboral"> {{ 'Aspecto Laboral'|translate}}</a></li>
-                                <li><a routerLink="coordinacion-cultural"> {{ 'Coordinación Cultural'|translate}}</a></li>
+                                <li><a routerLink="coordinacion-cultural"> {{ 'Coordinación Cultural'|translate}}</a>
+                                </li>
                                 <li><a href="javascript:void(0)"> {{ 'Exposiciones'|translate}}</a>
                                     <ul>
-                                        <li><a routerLink="exposiciones-colectivas"> {{ 'Exposiciones Colectivas'|translate}}</a></li>
-                                        <li><a routerLink="exposiciones-individuales"> {{ 'Exposiciones Individuales'|translate}}</a>
+                                        <li><a routerLink="exposiciones-colectivas"> {{ 'Exposiciones
+                                                Colectivas'|translate}}</a></li>
+                                        <li><a routerLink="exposiciones-individuales"> {{ 'Exposiciones
+                                                Individuales'|translate}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -103,7 +103,8 @@
                             <ul>
                                 <li><a routerLink="cronograma-de-cursos"> {{ 'Cronograma de Cursos'|translate}}</a></li>
                                 <li><a routerLink="cursos-de-orfebreria"> {{ 'Todos los Cursos'|translate}}</a></li>
-                                <li><a routerLink="curso-online-de-orfebria-en-vivo"> {{ 'Curso Online en Vivo'|translate}}</a></li>
+                                <li><a routerLink="curso-online-de-orfebria-en-vivo"> {{ 'Curso Online en
+                                        Vivo'|translate}}</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0)"> {{ 'Galería'|translate}}</a>
@@ -113,8 +114,10 @@
                                 <li><a routerLink="dijes"> {{ 'Dijes'|translate}}</a></li>
                                 <li><a routerLink="pulseras"> {{ 'Pulseras'|translate}}</a></li>
                                 <li><a routerLink="expo-caf"> {{ 'Expo CAF'|translate}}</a></li>
-                                <li><a routerLink="escuela-y-ursi-galletti"> {{ 'Escuela y Ursi Galletti'|translate}}</a></li>
-                                <li><a routerLink="joyas-de-la-gran-pantalla"> {{ 'Joyas de la Gran Pantalla'|translate}}</a></li>
+                                <li><a routerLink="escuela-y-ursi-galletti"> {{ 'Escuela y Ursi
+                                        Galletti'|translate}}</a></li>
+                                <li><a routerLink="joyas-de-la-gran-pantalla"> {{ 'Joyas de la Gran
+                                        Pantalla'|translate}}</a></li>
                                 <li><a routerLink="publicaciones"> {{ 'Publicaciones'|translate}}</a></li>
                             </ul>
                         </li>
@@ -137,18 +140,13 @@
                                 </div>
                             </ul>
                         </li>
-                        <li class="has-child-menu">
-                            <a style="cursor: pointer;">
-                                <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
+                        <li>
+                            <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
                                     (click)="cambiarLenguaje('en')"><span class="menu-item">Esp</span></a>
-                            </a>
                         </li>
-                        <li class="has-child-menu">
-                            <a style="cursor: pointer;">
-                                <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
+                        <li>
+                            <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
                                     (click)="cambiarLenguaje('es')"><span class="menu-item">Eng</span></a>
-
-                            </a>
                         </li>
                     </ul>
 

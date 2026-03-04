@@ -4,6 +4,7 @@ import { Category } from 'src/app/models/category';
 import { PostService } from 'src/app/services/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-post-by-category',
@@ -24,6 +25,7 @@ export class PostByCategoryComponent implements OnInit{
     public blogService: PostService,
     public categoryService: CategoryService,
     private activatedRoute: ActivatedRoute,
+    public translate: TranslateService
   ){}
 
   ngOnInit(): void {

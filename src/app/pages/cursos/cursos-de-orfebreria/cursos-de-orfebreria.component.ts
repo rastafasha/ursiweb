@@ -83,7 +83,7 @@ export class CursosDeOrfebreriaComponent implements OnInit {
     if(this.id == null){
       this.id = 0;
     }
-    console.log(this.user.id);
+    // console.log(this.user.id);
 
   }
 

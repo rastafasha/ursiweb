@@ -2,7 +2,7 @@
     <h4 class="title-widget text-center">{{'Categorías'| translate}}</h4>
     <ul>
         <li *ngFor="let cat of categories">
-            <a [routerLink]="['/blog/category/', cat.id]">{{cat.name}}</a>
+            <a [routerLink]="['/blog/category/', cat.id]">{{translate.currentLang === 'en' ? cat.name_eng : cat.name}}</a>
         </li>
     </ul>
 </div>

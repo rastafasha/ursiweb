@@ -10,6 +10,9 @@ export class Servicio {
   title?: string = "";
   subtitle?: string = "";
   description: string = "";
+  title_eng: string;
+  subtitle_eng: string;
+  description_eng: string;
   videoUrl: string = "";
   slug: string = "";
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';

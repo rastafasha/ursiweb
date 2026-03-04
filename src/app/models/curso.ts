@@ -7,6 +7,9 @@ export class Curso {
   category?: 'DIGITAL_GOODS';
   description: string;
   adicional: string;
+  name_eng: string;
+  description_eng: string;
+  adicional_eng: string;
   price: number;
   image: string;
   urlVideo: string;

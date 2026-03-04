@@ -1,7 +1,7 @@
 <section class="sub-header shop-layout-1">
     <img class="rellax bg-overlay" src="./assets/images/sub-header/expojoyasgranpantalla22.jpg" alt="ursi galletti taller escuela orfebreria">
     <div class="overlay-call-to-action"></div>
-    <h3 class="heading-style-3">{{'Categoría'|translate}}: {{category.name}}</h3>
+    <h3 class="heading-style-3">{{'Categoría'|translate}}: {{translate.currentLang === 'en' ? category.name_eng : category.name}}</h3>
 </section>
 <app-loading *ngIf="isLoading" ></app-loading>
 

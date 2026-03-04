@@ -24,7 +24,7 @@
                                 <div class="desc">
                                     <div class="header-desc">
                                         <h3 class="product-title">{{product.name}}</h3>
-                                        <p class="price">${{product.price}}</p>
+                                        <p class="price">{{product.price|currency}}</p>
                                     </div>
                                     <div class="body-desc">
                                         <div *ngIf="product.urlVideo">
