@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../pipes/pipes.module';
 import { LoadingComponent } from './loading/loading.component';
-
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -36,7 +36,8 @@ import { LoadingComponent } from './loading/loading.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

@@ -1,61 +1,75 @@
 <!-- header movil -->
 <nav id="menu">
     <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a href="javascript:void(0)">Quienes Somos</a>
+        <li><a routerLink="/">{{ 'Inicio'|translate}}</a></li>
+        <li><a href="javascript:void(0)"> {{ 'Quienes Somos'|translate}}</a>
             <ul>
-                <li><a routerLink="la-escuela-ursi-galletti">La Escuela</a></li>
-                <li><a routerLink="acerca-de-ursi-galletti">Ursi Galletti</a></li>
-                <li><a routerLink="aspecto-docente">Aspecto Docente</a></li>
-                <li><a routerLink="aspecto-laboral">Aspecto Laboral</a></li>
-                <li><a routerLink="coordinacion-cultural">Coordinación Cultural</a></li>
-                <li><a href="javascript:void(0)">Exposiciones</a>
+                <li><a routerLink="la-escuela-ursi-galletti"> {{ 'La Escuela'|translate}}</a></li>
+                <li><a routerLink="acerca-de-ursi-galletti">Ursi Galletti </a></li>
+                <li><a routerLink="aspecto-docente"> {{ 'Aspecto Docente'|translate}}</a></li>
+                <li><a routerLink="aspecto-laboral"> {{ 'Aspecto Laboral'|translate}}</a></li>
+                <li><a routerLink="coordinacion-cultural"> {{ 'Coordinación Cultural'|translate}}</a></li>
+                <li><a href="javascript:void(0)"> {{ 'Exposiciones'|translate}}</a>
                     <ul>
-                        <li><a routerLink="exposiciones-colectivas">Exposiciones Colectivas</a></li>
-                        <li><a routerLink="exposiciones-individuales">Exposiciones Individuales</a>
+                        <li><a routerLink="exposiciones-colectivas"> {{ 'Exposiciones Colectivas'|translate}}</a></li>
+                        <li><a routerLink="exposiciones-individuales"> {{ 'Exposiciones Individuales'|translate}}</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li><a href="javascript:void(0)">Cursos</a>
+        <li><a href="javascript:void(0)"> {{ 'Cursos'|translate}}</a>
             <ul>
-                <li><a routerLink="cronograma-de-cursos">Cronograma de Cursos</a></li>
-                <li><a routerLink="cursos-de-orfebreria">Todos los Cursos</a></li>
-                <li><a routerLink="curso-online-de-orfebria-en-vivo">Curso Online en Vivo</a></li>
+                <li><a routerLink="cronograma-de-cursos"> {{ 'Cronograma de Cursos'|translate}}</a></li>
+                <li><a routerLink="cursos-de-orfebreria"> {{ 'Todos los Cursos'|translate}}</a></li>
+                <li><a routerLink="curso-online-de-orfebria-en-vivo"> {{ 'Curso Online en Vivo'|translate}}</a></li>
             </ul>
         </li>
-        <li><a href="javascript:void(0)">Galería</a>
+        <li><a href="javascript:void(0)"> {{ 'Galería'|translate}}</a>
             <ul>
-                <li><a routerLink="anillos">Anillos</a></li>
-                <li><a routerLink="aretes">Aretes</a></li>
-                <li><a routerLink="dijes">Dijes</a></li>
-                <li><a routerLink="pulseras">Pulseras</a></li>
-                <li><a routerLink="expo-caf">Expo CAF</a></li>
-                <li><a routerLink="escuela-y-ursi-galletti">Escuela y Ursi Galletti</a></li>
-                <li><a routerLink="joyas-de-la-gran-pantalla">Joyas de la Gran Pantalla</a></li>
-                <li><a routerLink="publicaciones">Publicaciones</a></li>
+                <li><a routerLink="anillos"> {{ 'Anillos'|translate}}</a></li>
+                <li><a routerLink="aretes"> {{ 'Aretes'|translate}}</a></li>
+                <li><a routerLink="dijes"> {{ 'Dijes'|translate}}</a></li>
+                <li><a routerLink="pulseras"> {{ 'Pulseras'|translate}}</a></li>
+                <li><a routerLink="expo-caf"> {{ 'Expo CAF'|translate}}</a></li>
+                <li><a routerLink="escuela-y-ursi-galletti"> {{ 'Escuela y Ursi Galletti'|translate}}</a></li>
+                <li><a routerLink="joyas-de-la-gran-pantalla"> {{ 'Joyas de la Gran Pantalla'|translate}}</a></li>
+                <li><a routerLink="publicaciones"> {{ 'Publicaciones'|translate}}</a></li>
             </ul>
         </li>
-        <li><a href="javascript:void(0)">Servicios</a>
+        <li><a href="javascript:void(0)"> {{ 'Servicios'|translate}}</a>
             <ul>
-                <li><a routerLink="servicios">Reparaciones</a></li>
-                <li><a routerLink="herramientas">Herramientas</a></li>
+                <li><a routerLink="servicios"> {{ 'Reparaciones'|translate}}</a></li>
+                <li><a routerLink="herramientas"> {{ 'Herramientas'|translate}}</a></li>
             </ul>
         </li>
-        <li><a routerLink="contact">Contacto</a></li>
-        <li><a href="javascript:void(0)">Mi Cuenta</a>
+        <li><a routerLink="contact"> {{ 'Contacto'|translate}}</a></li>
+        <li><a href="javascript:void(0)"> {{ 'Mi Cuenta'|translate}}</a>
             <ul>
                 <div *ngIf="!user">
-                    <li><a routerLink="login">Registro/Login</a></li>
+                    <li><a routerLink="login"> {{ 'Registro/Login'|translate}}</a></li>
                 </div>
                 <div *ngIf="user">
-                    <li>Bienvenido: {{user.username}}</li>
-                    <li><a [routerLink]="['/user-account', user.id]">Mi Cuenta</a></li>
-                    <li><a (click)="logout()" class="cursor">Logout</a></li>
+                    <li>{{ 'Bienvenido'|translate }}: {{user.username}}</li>
+                    <li><a [routerLink]="['/user-account', user.id]"> {{ 'Mi Cuenta'|translate}}</a></li>
+                    <li><a (click)="logout()" class="cursor"> {{ 'Cerrar Sesión'|translate}}</a></li>
                 </div>
             </ul>
         </li>
+
+       <li class="has-child-menu">
+                <a style="cursor: pointer;">
+                    <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
+                        (click)="cambiarLenguaje('en')"><span class="menu-item">Esp</span></a>
+                </a>
+            </li>
+            <li class="has-child-menu">
+                <a style="cursor: pointer;">
+                    <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
+                        (click)="cambiarLenguaje('es')"><span class="menu-item">Eng</span></a>
+
+                </a>
+            </li>
     </ul>
 </nav>
 <!-- header movil -->
@@ -69,61 +83,75 @@
                 </a>
                 <nav>
                     <ul class="menu ">
-                        <li><a href="javascript:void(0)">Quienes Somos</a>
+                        <li><a href="javascript:void(0)"> {{ 'Quienes Somos'|translate}}</a>
                             <ul>
-                                <li><a routerLink="la-escuela-ursi-galletti">La Escuela</a></li>
-                                <li><a routerLink="acerca-de-ursi-galletti">Ursi Galletti</a></li>
-                                <li><a routerLink="aspecto-docente">Aspecto Docente</a></li>
-                                <li><a routerLink="aspecto-laboral">Aspecto Laboral</a></li>
-                                <li><a routerLink="coordinacion-cultural">Coordinación Cultural</a></li>
-                                <li><a href="javascript:void(0)">Exposiciones</a>
+                                <li><a routerLink="la-escuela-ursi-galletti"> {{ 'La Escuela'|translate}}</a></li>
+                                <li><a routerLink="acerca-de-ursi-galletti"> {{ 'Ursi Galletti'|translate}}</a></li>
+                                <li><a routerLink="aspecto-docente"> {{ 'Aspecto Docente'|translate}}</a></li>
+                                <li><a routerLink="aspecto-laboral"> {{ 'Aspecto Laboral'|translate}}</a></li>
+                                <li><a routerLink="coordinacion-cultural"> {{ 'Coordinación Cultural'|translate}}</a></li>
+                                <li><a href="javascript:void(0)"> {{ 'Exposiciones'|translate}}</a>
                                     <ul>
-                                        <li><a routerLink="exposiciones-colectivas">Exposiciones Colectivas</a></li>
-                                        <li><a routerLink="exposiciones-individuales">Exposiciones Individuales</a>
+                                        <li><a routerLink="exposiciones-colectivas"> {{ 'Exposiciones Colectivas'|translate}}</a></li>
+                                        <li><a routerLink="exposiciones-individuales"> {{ 'Exposiciones Individuales'|translate}}</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">Cursos</a>
+                        <li><a href="javascript:void(0)"> {{ 'Cursos'|translate}}</a>
                             <ul>
-                                <li><a routerLink="cronograma-de-cursos">Cronograma de Cursos</a></li>
-                                <li><a routerLink="cursos-de-orfebreria">Todos los Cursos</a></li>
-                                <li><a routerLink="curso-online-de-orfebria-en-vivo">Curso Online en Vivo</a></li>
+                                <li><a routerLink="cronograma-de-cursos"> {{ 'Cronograma de Cursos'|translate}}</a></li>
+                                <li><a routerLink="cursos-de-orfebreria"> {{ 'Todos los Cursos'|translate}}</a></li>
+                                <li><a routerLink="curso-online-de-orfebria-en-vivo"> {{ 'Curso Online en Vivo'|translate}}</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">Galería</a>
+                        <li><a href="javascript:void(0)"> {{ 'Galería'|translate}}</a>
                             <ul>
-                                <li><a routerLink="anillos">Anillos</a></li>
-                                <li><a routerLink="aretes">Aretes</a></li>
-                                <li><a routerLink="dijes">Dijes</a></li>
-                                <li><a routerLink="pulseras">Pulseras</a></li>
-                                <li><a routerLink="expo-caf">Expo CAF</a></li>
-                                <li><a routerLink="escuela-y-ursi-galletti">Escuela y Ursi Galletti</a></li>
-                                <li><a routerLink="joyas-de-la-gran-pantalla">Joyas de la Gran Pantalla</a></li>
-                                <li><a routerLink="publicaciones">Publicaciones</a></li>
+                                <li><a routerLink="anillos"> {{ 'Anillos'|translate}}</a></li>
+                                <li><a routerLink="aretes"> {{ 'Aretes'|translate}}</a></li>
+                                <li><a routerLink="dijes"> {{ 'Dijes'|translate}}</a></li>
+                                <li><a routerLink="pulseras"> {{ 'Pulseras'|translate}}</a></li>
+                                <li><a routerLink="expo-caf"> {{ 'Expo CAF'|translate}}</a></li>
+                                <li><a routerLink="escuela-y-ursi-galletti"> {{ 'Escuela y Ursi Galletti'|translate}}</a></li>
+                                <li><a routerLink="joyas-de-la-gran-pantalla"> {{ 'Joyas de la Gran Pantalla'|translate}}</a></li>
+                                <li><a routerLink="publicaciones"> {{ 'Publicaciones'|translate}}</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">Servicios</a>
+                        <li><a href="javascript:void(0)"> {{ 'Servicios'|translate}}</a>
                             <ul>
-                                <li><a routerLink="servicios">Reparaciones</a></li>
-                                <li><a routerLink="herramientas">Herramientas</a></li>
+                                <li><a routerLink="servicios"> {{ 'Reparaciones'|translate}}</a></li>
+                                <li><a routerLink="herramientas"> {{ 'Herramientas'|translate}}</a></li>
                             </ul>
                         </li>
-                        <li><a routerLink="contact">Contacto</a></li>
-                        <li><a href="javascript:void(0)">Mi Cuenta</a>
+                        <li><a routerLink="contact">{{ 'Contacto'|translate}}</a></li>
+                        <li><a href="javascript:void(0)"> {{ 'Mi Cuenta'|translate}}</a>
                             <ul>
                                 <div *ngIf="!user">
-                                    <li><a routerLink="login">Registro/Login</a></li>
+                                    <li><a routerLink="login"> {{ 'Registro/Login'|translate}}</a></li>
                                 </div>
                                 <div *ngIf="user">
-                                    <li>Bienvenido: {{user.username}}</li>
-                                    <li><a [routerLink]="['/user-account', user.id]">Mi Cuenta</a></li>
-                                    <li><a (click)="logout()" class="cursor">Logout</a></li>
+                                    <li>{{ 'Bienvenido'|translate }}: {{user.username}}</li>
+                                    <li><a [routerLink]="['/user-account', user.id]">{{ 'Mi Cuenta'|translate}}</a></li>
+                                    <li><a (click)="logout()" class="cursor">{{ 'Cerrar Sesión'|translate}}</a></li>
                                 </div>
                             </ul>
                         </li>
+                        <li class="has-child-menu">
+                            <a style="cursor: pointer;">
+                                <a *ngIf="!flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'es'}"
+                                    (click)="cambiarLenguaje('en')"><span class="menu-item">Esp</span></a>
+                            </a>
+                        </li>
+                        <li class="has-child-menu">
+                            <a style="cursor: pointer;">
+                                <a *ngIf="flag" style="cursor: pointer;" [ngClass]="{'active': activeLang == 'en'}"
+                                    (click)="cambiarLenguaje('es')"><span class="menu-item">Eng</span></a>
+
+                            </a>
+                        </li>
                     </ul>
+
                 </nav>
                 <aside class="right">
                     <div class="widget widget-control-header hidden-lg hidden-md hidden-sm">
