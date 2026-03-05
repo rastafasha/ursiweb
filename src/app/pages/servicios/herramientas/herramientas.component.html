@@ -11,10 +11,9 @@
         <div class="row padding">
             <div class="herramientas animated fadeInUp">
                 <div class="col-xs-12 col-sm-6">
-                    <h3>{{herramienta.title}}</h3>
-                    <h2>{{herramienta.subtitle}}</h2>
-                    <br>
-                    <div class="sapo" [innerHtml]="herramienta.description | safe: 'html' "></div>
+                    <h4>{{translate.currentLang === 'en' ? herramienta.title_eng : herramienta.title}}</h4>
+                <h3>{{translate.currentLang === 'en' ? herramienta.subtitle_eng : herramienta.subtitle}}</h3>
+                <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? herramienta.description_eng : herramienta.description | safe: 'html'"></div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <img [src]="herramienta.image | imagenPipe: 'herramientas'" alt="ursi galletti taller escuela orfebreria {{herramienta.title}}">

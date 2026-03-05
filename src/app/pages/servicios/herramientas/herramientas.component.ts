@@ -1,5 +1,6 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Herramienta } from 'src/app/models/herramienta';
 import { HerramientaService } from 'src/app/services/herramienta.service';
 @Component({
@@ -17,7 +18,8 @@ export class HerramientasComponent implements OnInit {
 
   constructor(
     private herramientaService: HerramientaService,
-    handler: HttpBackend
+    handler: HttpBackend,
+    public translate: TranslateService
   ) {
    }
 

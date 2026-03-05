@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Curso } from 'src/app/models/curso';
 import { CursosService } from 'src/app/services/cursos.service';
 
@@ -13,7 +14,8 @@ export class DestacadosComponent implements OnInit{
   error:string;
 
   constructor(
-    public cursoService: CursosService
+    public cursoService: CursosService,
+    public translate: TranslateService
   ){}
 
   ngOnInit(): void {

@@ -15,6 +15,7 @@ export class Post {
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';
   image: string = "";
   name: Category;
+  name_eng: Category;
   created_at?: any;
   updated_at?: any;
 

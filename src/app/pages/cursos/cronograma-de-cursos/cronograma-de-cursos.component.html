@@ -1,4 +1,4 @@
-<section class="sub-header shop-layout-1">
+<section class="sub-header shop-layout-1" style="margin-bottom:40px">
     <img class="rellax bg-overlay" src="./assets/images/slider/cultural.jpg" alt="ursi galletti taller escuela orfebreria cursos">
     <div class="overlay-call-to-action"></div>
     <h3 class="heading-style-3">{{'Cronograma de Cursos'| translate}}</h3>
@@ -9,31 +9,30 @@
 
 <section class="boxed-sm" id="info" *ngIf="!isLoading">
     <div class="container">
-        <div class="row padding">
-            <div class="curso-cronograma " *ngFor="let cronologiacurso of cronologiacursos">
-                <div class="col-xs-12 col-sm-6">
-                    <h3>{{cronologiacurso.modo}}</h3>
-                    <h2>{{cronologiacurso.title}}</h2>
-                    <div class="sapo" [innerHtml]="cronologiacurso.description | safe: 'html' "></div>
-                    <br>
-                    <ul style="padding-left:20px">
-                        <li> {{'Fecha'| translate}}: {{cronologiacurso.fecha}}</li>
-                        <li> {{'Hora'| translate}}: {{cronologiacurso.hora}}</li>
-                        <li> {{'Clases'| translate}}: {{cronologiacurso.clases}}</li>
-                        <li> {{'Duración'| translate}}: {{cronologiacurso.duracion}}</li>
-                        <li>{{cronologiacurso.proyecto}}</li>
-                        <li> {{'Inversión'| translate}}: ${{cronologiacurso.costo}}</li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div *ngIf="!cronologiacurso.image">
-                        <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
-                    </div>
-                    <div *ngIf="cronologiacurso.image">
-                        <img class="img-responsive" [src]="cronologiacurso.image | imagenPipe: 'cronologiacursos'" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
-                    </div>
+        <div class="curso-cronograma row" style="margin-bottom:40px"  *ngFor="let cronologiacurso of cronologiacursos">
+            <div class="col-xs-12 col-sm-6 ">
+                <h3>{{translate.currentLang === 'en' ? cronologiacurso.modo_eng : cronologiacurso.modo}}</h3>
+                <h2>{{translate.currentLang === 'en' ? cronologiacurso.title_eng : cronologiacurso.title}}</h2>
+                <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? cronologiacurso.description_eng : cronologiacurso.description | safe: 'html'"></div>
+                <br>
+                <ul style="padding-left:20px">
+                    <li> {{'Fecha'| translate}}: {{translate.currentLang === 'en' ? cronologiacurso.fecha_eng : cronologiacurso.fecha}}</li>
+                    <li> {{'Hora'| translate}}: {{translate.currentLang === 'en' ? cronologiacurso.hora_eng : cronologiacurso.hora}}</li>
+                    <li> {{'Clases'| translate}}: {{translate.currentLang === 'en' ? cronologiacurso.clases_eng : cronologiacurso.clases}}</li>
+                    <li> {{'Duración'| translate}}: {{translate.currentLang === 'en' ? cronologiacurso.duracion_eng : cronologiacurso.duracion}}</li>
+                    <li>{{translate.currentLang === 'en' ? cronologiacurso.proyecto_eng : cronologiacurso.proyecto}}</li>
+                    <li> {{'Inversión'| translate}}: {{cronologiacurso.costo|currency}}</li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <!-- <div *ngIf="!cronologiacurso.image">
+                    <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
+                </div> -->
+                <div *ngIf="cronologiacurso.image">
+                    <img class="img-responsive" [src]="cronologiacurso.image | imagenPipe: 'cronologiacursos'" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
                 </div>
             </div>
         </div>
+       
     </div>
 </section>

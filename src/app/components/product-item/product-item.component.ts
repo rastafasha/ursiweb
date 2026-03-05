@@ -5,6 +5,7 @@ import { User } from 'src/app/models/user';
 import { AccountService } from 'src/app/services/account.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-item',
@@ -21,29 +22,27 @@ export class ProductItemComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private userService: UserService,
-    private router: Router
+    public translate: TranslateService
     ) {
       this.user = userService.user;
     }
 
   ngOnInit(): void {
-    this.getUser();
-    this.getUserServer();
-  }
-
-  addToCart(): void{
-    console.log('sending...')
-    this.messageService.sendMessage(this.product);
-  }
-
-  getUser(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
     if(this.id == null){
       this.id = 0;
     }else{
-      // this.user = JSON.parse(localStorage.getItem('user'));
     this.id = this.user.id;
     }
+  }
+
+  addToCart(): void{
+    // console.log('sending...')
+    this.messageService.sendMessage(this.product);
+  }
+
+  getUser(): void {
+    
     // console.log(this.user.id);
     
   }
@@ -53,7 +52,7 @@ export class ProductItemComponent implements OnInit {
       res =>{
         this.user = res[0];
         // error => this.error = error
-        console.log(this.user);
+        // console.log(this.user);
       }
     );
 

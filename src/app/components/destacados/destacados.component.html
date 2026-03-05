@@ -21,8 +21,8 @@
                                 </div>
 
                             </div>
-                            <h2>{{curso.name}}</h2>
-                            <div class="sapo introHome" [innerHtml]="curso.adicional | safe: 'html' "></div>
+                            <h2>{{translate.currentLang === 'en' ? curso.name_eng : curso.name}}</h2>
+                            <div class="sapo introHome" [innerHtml]="translate.currentLang === 'en' ? curso.adicional_eng : curso.adicional | safe: 'html'"></div>
                         </div>
                     </div>
                 </div>

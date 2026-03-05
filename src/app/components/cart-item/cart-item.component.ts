@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartItemModel } from '../../models/cart-item-model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart-item',
@@ -10,7 +11,9 @@ export class CartItemComponent implements OnInit {
 
   @Input() cartItem: CartItemModel;
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
   }

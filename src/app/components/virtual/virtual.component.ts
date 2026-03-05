@@ -43,13 +43,13 @@ export class VirtualComponent implements OnInit {
       res =>{
         this.cursos = res;
         error => this.error = error
-        console.log(this.cursos);
+        // console.log(this.cursos);
       }
     );
   }
 
   addToCart(): void{
-    console.log('sending...')
+    // console.log('sending...')
     this.messageService.sendMessage(this.product);
   }
 

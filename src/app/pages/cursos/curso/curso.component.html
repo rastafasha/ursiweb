@@ -22,7 +22,7 @@
                     <div class="summary">
                         <div class="desc">
                             <div class="header-desc">
-                                <h3 class="product-title">{{curso.name}}</h3>
+                                <h3 class="product-title">{{translate.currentLang === 'en' ? curso.name_eng : curso.name}}</h3>
                                 <p class="price">{{curso.price | currency}}</p>
                             </div>
                             <div class="body-desc">
@@ -30,7 +30,7 @@
                                     <iframe class="embed-responsive-item shadow" width="100%" height="240" [src]="getVideoIframe(curso.urlVideo)" frameborder="0" allow="accelerometer; autoplay;  " allowfullscreen></iframe>
                                 </div>
                                 <div class="woocommerce-product-details-short-description">
-                                    <div class="sapo" [innerHtml]="curso.adicional | safe: 'html' "></div>
+                                    <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? curso.adicional_eng : curso.adicional | safe: 'html'"></div>
                                 </div>
                                 <button class="btn btn-outline-ursi" (click)="addToCart()"> <i class="fa fa-shopping-cart"></i></button>
                                 <div class="sharing">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -13,7 +14,8 @@ export class BlogFeaturedComponent implements OnInit{
   error:string;
 
   constructor(
-    public blogService: PostService
+    public blogService: PostService,
+    public translate: TranslateService
   ){}
 
   ngOnInit(): void {

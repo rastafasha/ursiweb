@@ -1,7 +1,7 @@
 <section class="sub-header shop-layout-1">
     <img class="rellax bg-overlay" [src]="post.image | imagenPipe: 'posts'" alt="ursi galletti taller escuela orfebreria ">
     <div class="overlay-call-to-action"></div>
-    <h3 class="heading-style-3">{{post.title}}</h3>
+    <h3 class="heading-style-3">{{translate.currentLang === 'en' ? post.title_eng : post.title}}</h3>
 </section>
 <section class="boxed-sm" id="info">
     <div class="container">
@@ -20,10 +20,10 @@
                     <div class="clear"></div>
                     <br>
                     <div class=" col-xs-12">
-                        <h3>{{post.title}}</h3>
+                        <h3>{{translate.currentLang === 'en' ? post.title_eng : post.title}}</h3>
                         <p class="meta">
                             <span class="time">
-                            <a [routerLink]="['/blog/category/', post.name]">{{post.name}}</a>
+                            <a [routerLink]="['/blog/category/', post.name]">{{translate.currentLang === 'en' ? post.name_eng : post.name}} </a>
                             </span>
                         </p>
                         <p class="meta">
@@ -31,7 +31,7 @@
                         </p>
                         <br>
 
-                        <div class="sapo" [innerHtml]="post.description | safe: 'html' "></div>
+                        <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? post.description_eng : post.description | safe: 'html'  "></div>
                         <div class="sharing">
 
                             <h4>{{'Compartir'|translate}}</h4>

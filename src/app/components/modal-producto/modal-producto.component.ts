@@ -3,6 +3,7 @@ import { Curso } from 'src/app/models/curso';
 import { CursosService } from 'src/app/services/cursos.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class ModalProductoComponent implements OnInit{
 
   constructor(
     private cursoService: CursosService,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    public translate: TranslateService
     ) { }
 
   ngOnInit() {

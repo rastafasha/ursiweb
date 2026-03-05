@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, switchMap } from 'rxjs';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
@@ -24,6 +25,7 @@ export class BlogDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private blogService: PostService,
+    public translate: TranslateService
   ) { }
 
   ngOnInit() {

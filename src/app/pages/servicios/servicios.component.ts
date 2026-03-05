@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title, DomSanitizer } from '@angular/platform-browser';
 import { Servicio } from 'src/app/models/servicio';
 import { ServiciosService } from '../../services/servicios.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-servicios',
@@ -17,7 +18,8 @@ export class ServiciosComponent implements OnInit{
 
   constructor(
     private servicioService: ServiciosService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public translate: TranslateService
   ) {
    }
 

@@ -12,9 +12,9 @@
                 <iframe width="100%" height="320" style="margin-top:40px;" class="wow fadeIn embed-responsive-item" [src]="getVideoIframe(servicio.videoUrl)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " allowfullscreen></iframe>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <h4>{{servicio.title}}</h4>
-                <h3>{{servicio.subtitle}}</h3>
-                <div class="sapo" [innerHtml]="servicio.description | safe: 'html' "></div>
+                <h4>{{translate.currentLang === 'en' ? servicio.title_eng : servicio.title}}</h4>
+                <h3>{{translate.currentLang === 'en' ? servicio.subtitle_eng : servicio.subtitle}}</h3>
+                <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? servicio.description_eng : servicio.description | safe: 'html'"></div>
             </div>
         </div>
     </div>
