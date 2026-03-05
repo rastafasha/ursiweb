@@ -26,7 +26,7 @@ export class CronogramaDeCursosComponent implements OnInit{
 
   getCronogramas(): void {
     this.isLoading = true;
-    this.cronogramaService.getCronologiacursos().subscribe(
+    this.cronogramaService.getCursosActivos().subscribe(
       res =>{
         this.cronologiacursos = res;
         error => this.error = error

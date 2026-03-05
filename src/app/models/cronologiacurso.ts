@@ -23,6 +23,7 @@ export class Cronologiacurso {
   image: string;
   created_at?: any;
   updated_at?: any;
+  status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';
 
   get imagenUrl(){
 

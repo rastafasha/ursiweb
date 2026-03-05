@@ -43,4 +43,12 @@ export class CronologiacursosService {
       map((resp:{ok: boolean, cronologiacurso: Cronologiacurso}) => resp.cronologiacurso)
     );
   }
+
+  getCursosActivos()  {
+      const url = `${baseUrl}/cronologiacurso/activos`;
+      return this.http.get<any>(url, this.headers)
+        .pipe(
+          map((resp:{ok: boolean, cronologiacursos: Cronologiacurso}) => resp.cronologiacursos)
+        )
+    }
 }
