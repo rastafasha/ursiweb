@@ -25,6 +25,8 @@ export class CursosDeOrfebreriaComponent implements OnInit {
 
   isEdnOfList = false;
 
+  selectedProduct: Curso = null; // Added: Store selected product for modal
+
 
 
   constructor(
@@ -42,6 +44,16 @@ export class CursosDeOrfebreriaComponent implements OnInit {
     this.getUser();
     this.getUserServer();
     
+    // Subscribe to receive selected product for modal from product-item
+    this.messageService.getModalMessage().subscribe((product: Curso) => {
+      this.selectedProduct = product;
+    });
+    
+  }
+
+  // Method to clear selected product when modal is closed
+  onModalClose(): void {
+    this.selectedProduct = null;
   }
 
 

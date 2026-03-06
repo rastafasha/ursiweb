@@ -41,6 +41,12 @@ export class ProductItemComponent implements OnInit {
     this.messageService.sendMessage(this.product);
   }
 
+  openModal(): void {
+    // Send the product to the parent component for modal display (separate from cart)
+    this.messageService.sendModalProduct(this.product);
+    console.log('first')
+  }
+
   getUser(): void {
     
     // console.log(this.user.id);

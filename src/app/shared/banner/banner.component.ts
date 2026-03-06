@@ -15,6 +15,7 @@ export class BannerComponent implements OnInit {
   banners: Banner;
   error: string;
   msm_error: string;
+  isLoading= false;
 
   constructor(
     private bannerService: BannerService,
@@ -28,10 +29,12 @@ export class BannerComponent implements OnInit {
   }
 
   getCursos(): void {
+    this.isLoading = true;
     this.bannerService.getBanners().subscribe(
       res =>{
         this.banners = res;
         error => this.error = error;
+        this.isLoading = false;
       }
     );
   }

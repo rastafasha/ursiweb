@@ -1,5 +1,7 @@
 
-<div id="mycarr" class="carousel slide slide1 carousel-fade " data-ride="carousel">
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div id="mycarr" class="carousel slide slide1 carousel-fade " data-ride="carousel" *ngIf="!isLoading">
     <!-- Indicators -->
     <!--ol class="carousel-indicators">
   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

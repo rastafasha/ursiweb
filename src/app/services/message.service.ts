@@ -8,6 +8,7 @@ import { Curso } from '../models/curso';
 export class MessageService {
 
   message = new Subject()
+  modalMessage = new Subject() // Separate subject for modal product selection
 
   constructor() { }
 
@@ -15,7 +16,16 @@ export class MessageService {
     this.message.next(product);
   }
 
+  // Method to send product for modal display (separate from cart)
+  sendModalProduct(product: Curso): void {
+    this.modalMessage.next(product);
+  }
+
   getMessage(): Observable<any>{
     return this.message.asObservable();
+  }
+
+  getModalMessage(): Observable<any> {
+    return this.modalMessage.asObservable();
   }
 }
