@@ -7,7 +7,7 @@ export const environment = {
   
   //remoto
   apiUrl: "https://ursigalletti.net/backend-api-ursi2/public/api",
-  apiUrlMedia: "https://ursigalletti.net/backend-api-ursi2/storage/",
+  apiUrlMedia: "https://ursigalletti.net/backend-api-ursi2/storage/app/public/",
   clientIdSandbox: 'AVqPEgCGvjhPeugklbaUQUmujPZEVb53TZBYWUbjBUvppz4bOoXKgXot2sZtXQgH5AHsdSp-WYuB83nM',//ursi
   clientId: 'ATLlUShSXBpJNhgTm6M0H2l1yq42P9fYBmNGDYdKRAIAy8hMcf_wwnCUUIaUHev8LcrVKK_oUxUsYXSs'//ursi
 
