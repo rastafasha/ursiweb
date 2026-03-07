@@ -38,11 +38,11 @@ export class ModalProductoComponent implements OnInit, OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     // When product input changes, open the modal
     if (changes['product'] && changes['product'].currentValue) {
-      this.openModal();
+      this.openModal(this.product);
     }
   }
 
-  openModal(): void {
+  openModal(product): void {
     // Use jQuery to open the Bootstrap modal
     if (typeof jQuery !== 'undefined') {
       jQuery('#' + this.product.modal).modal('show');

@@ -2,7 +2,7 @@
     <div class="product product-style-1">
         <div class="img-wrapper">
             <div class="image-container">
-                <a class="js-quick-view cursor" type="button" (click)="openModal()">
+                <a class="js-quick-view cursor" type="button" (click)="openModal()" href="javascript:void(0)"  data-toggle="modal" [attr.data-target]="'#' + product.modal">
                     <img class="img-responsive" [src]="product.avatar | imagenPipe: 'cursos'" width="100%"
                         alt="ursi galletti taller escuela orfebreria {{product.name}}" />
                 </a>
@@ -25,3 +25,4 @@
         </figcaption>
     </div>
 </figure>
+<!-- <app-modal-producto [product]="product"></app-modal-producto> -->
