@@ -10,12 +10,9 @@
             <div class="col-xs-12 col-md-9">
                 <div class="col-md-6">
                     <div class="woocommerce-product-gallery">
-                        <div *ngIf="!curso.image">
-                            <img class="img-responsive" src="./assets/images/no-image.jpg" width="100%" alt="ursi galletti taller escuela orfebreria {{curso.name}}" />
-                        </div>
-                        <div *ngIf="curso.image">
-                            <img class="img-responsive" [src]="curso.image | imagenPipe: 'cursos'" width="100%" alt="ursi galletti taller escuela orfebreria {{curso.name}}" />
-                        </div>
+                       
+                        <img class="img-responsive" [src]="curso.avatar | imagenPipe: 'cursos'" width="100%" alt="ursi galletti taller escuela orfebreria {{curso.name}}" />
+                        
                     </div>
                 </div>
                 <div class="col-md-6">

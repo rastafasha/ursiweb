@@ -9,8 +9,8 @@
     <div class="container">
         <div class="masonry">
             <div class="item" *ngFor="let publicacion of publicaciones">
-                <a class="thumbnail" data-gallery [href]="publicacion.image | imagenPipe: 'publicacions'">
-                    <img class="pin" [src]="publicacion.image | imagenPipe: 'publicacions'" alt="ursi galletti taller escuela orfebreria publicaciones" /></a>
+                <a class="thumbnail" data-gallery [href]="publicacion.avatar | imagenPipe: 'publicacions'">
+                    <img class="pin" [src]="publicacion.avatar | imagenPipe: 'publicacions'" alt="ursi galletti taller escuela orfebreria publicaciones" /></a>
             </div>
             <!--end thumb -->
         </div>

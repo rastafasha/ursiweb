@@ -2,23 +2,19 @@
     <div class="product product-style-1">
         <div class="img-wrapper">
             <div class="image-container">
-                <div *ngIf="!product.image">
-                    <img class="img-responsive" src="./assets/images/no-image.jpg" width="100%" alt="ursi galletti taller escuela orfebreria {{product.name}}" />
-                </div>
                 <a class="js-quick-view cursor" type="button" (click)="openModal()">
-                    <div *ngIf="product.image">
-                        <img class="img-responsive" [src]="product.image | imagenPipe: 'cursos'" width="100%" alt="ursi galletti taller escuela orfebreria {{product.name}}" />
-                    </div>
-            </a>
+                    <img class="img-responsive" [src]="product.avatar | imagenPipe: 'cursos'" width="100%"
+                        alt="ursi galletti taller escuela orfebreria {{product.name}}" />
+                </a>
             </div>
-            
-            <div class="product-control-wrapper bottom-right">
+
+            <!-- <div class="product-control-wrapper bottom-right">
                 <div class="wrapper-control-item">
                     <a class="js-quick-view cursor" type="button" (click)="openModal()">
                         <span class="lnr lnr-eye"></span>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
         <figcaption class="desc">
             <h3>{{translate.currentLang === 'en' ? product.name_eng : product.name | slice:0:30}}...</h3>
@@ -29,5 +25,3 @@
         </figcaption>
     </div>
 </figure>
-
-

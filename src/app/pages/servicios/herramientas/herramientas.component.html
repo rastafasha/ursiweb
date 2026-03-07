@@ -16,7 +16,7 @@
                 <div class="sapo" [innerHtml]="translate.currentLang === 'en' ? herramienta.description_eng : herramienta.description | safe: 'html'"></div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <img [src]="herramienta.image | imagenPipe: 'herramientas'" alt="ursi galletti taller escuela orfebreria {{herramienta.title}}">
+                    <img [src]="herramienta.avatar | imagenPipe: 'herramientas'" alt="ursi galletti taller escuela orfebreria {{herramienta.title}}">
                 </div>
             </div>
         </div>

@@ -14,12 +14,9 @@
                 <div>
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <a [routerLink]="['/blog', post.slug]">
-                            <div *ngIf="!post.image">
-                                <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{post.title}}" style="width:100%" />
-                            </div>
-                            <div *ngIf="post.image">
-                                <img class="img-responsive" [src]="post.image | imagenPipe: 'posts'" alt="ursi galletti taller escuela orfebreria {{post.title}}" style="width:100%" />
-                            </div>
+                            
+                            <img class="img-responsive" [src]="post.avatar | imagenPipe: 'posts'" alt="ursi galletti taller escuela orfebreria {{post.title}}" style="width:100%" />
+                            
                         </a>
                     </div>
                     <div class=" col-xs-12 col-sm-9 col-md-9">

@@ -31,7 +31,7 @@ export class HerramientasComponent implements OnInit {
   getServicios(): void {
     this.isLoading = true;
     this.herramientaService.getHerramientas().subscribe(
-      res =>{
+      (res:any) =>{
         this.herramientas = res;
         error => this.error = error;
         this.isLoading = false;

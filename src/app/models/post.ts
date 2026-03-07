@@ -14,6 +14,7 @@ export class Post {
   is_featured: boolean;
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';
   image: string = "";
+    avatar: string = "";
   name: Category;
   name_eng: Category;
   created_at?: any;
@@ -30,14 +31,14 @@ export class Post {
   get imagenUrl(){
 
     if(!this.image){
-      return `${base_url}posts/no-image.jpg`;
+      return `${base_url}no-image.png`;
     } else if(this.image.includes('https')){
       return this.image;
     } else if(this.image){
-      return `${base_url}posts/${this.image}`;
+      return `${base_url}${this.image}`;
     }else {
-      return `${base_url}/no-image.jpg`;
-      // return `./assets/img/no-image.jpg`;
+      // return `${base_url}no-image.jpg`;
+      return `./assets/images/no-image.jpg`;
     }
 
   }

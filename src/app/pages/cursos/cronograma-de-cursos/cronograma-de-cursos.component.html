@@ -25,12 +25,8 @@
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <!-- <div *ngIf="!cronologiacurso.image">
-                    <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
-                </div> -->
-                <div *ngIf="cronologiacurso.image">
-                    <img class="img-responsive" [src]="cronologiacurso.image | imagenPipe: 'cronologiacursos'" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
-                </div>
+                
+                <img class="img-responsive" [src]="cronologiacurso.avatar | imagenPipe: 'cronologiacursos'" alt="ursi galletti taller escuela orfebreria {{cronologiacurso.title}}" />
             </div>
         </div>
        

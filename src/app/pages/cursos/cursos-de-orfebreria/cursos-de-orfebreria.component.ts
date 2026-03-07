@@ -66,7 +66,7 @@ export class CursosDeOrfebreriaComponent implements OnInit {
   loadCursos(){
     this.isLoading = true;
     this.cursoService.getCursosActivos().subscribe(
-      res =>{
+      (res:any) =>{
         this.cursos = res;
         error => this.error = error
         this.isLoading = false;

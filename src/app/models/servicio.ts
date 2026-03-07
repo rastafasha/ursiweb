@@ -17,6 +17,7 @@ export class Servicio {
   slug: string = "";
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';
   image: string = "";
+    avatar: string = "";
   imageTop: string = "";
   created_at?: any;
   updated_at?: any;

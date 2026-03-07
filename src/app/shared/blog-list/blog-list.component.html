@@ -5,12 +5,8 @@
         <div class="post row post-lateral">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a [routerLink]="['/blog', blog.slug]">
-                    <div *ngIf="!blog.image">
-                        <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{blog.title}}" style="width:100%" />
-                    </div>
-                    <div *ngIf="blog.image">
-                        <img class="img-responsive" [src]="blog.image | imagenPipe: 'posts'" alt="ursi galletti taller escuela orfebreria {{blog.title}}" style="width:100%" />
-                    </div>
+                    <img class="img-responsive" [src]="blog.avatar | imagenPipe: 'posts'"
+                        alt="ursi galletti taller escuela orfebreria {{blog.title}}" style="width:100%" />
                 </a>
             </div>
             <div class=" col-xs-12 col-sm-8 col-md-8">

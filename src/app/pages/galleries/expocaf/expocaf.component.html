@@ -10,8 +10,8 @@
     <div class="container ">
         <div class="masonry">
             <div class=" item" *ngFor="let expocaf of expocafs">
-                <a [href]="expocaf.image | imagenPipe: 'expocafs'" data-gallery title="">
-                    <img [src]="expocaf.image | imagenPipe: 'expocafs'" alt="ursi galletti taller escuela orfebreria expo caf" width="92" height="100" border="0" class="pin" /></a>
+                <a [href]="expocaf.avatar | imagenPipe: 'expocafs'" data-gallery title="">
+                    <img [src]="expocaf.avatar | imagenPipe: 'expocafs'" alt="ursi galletti taller escuela orfebreria expo caf" width="92" height="100" border="0" class="pin" /></a>
             </div>
         </div>
     </div>

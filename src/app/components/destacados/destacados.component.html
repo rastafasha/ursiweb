@@ -13,12 +13,8 @@
                     <div class="card servicio">
                         <div class="card-body">
                             <div class="imagen">
-                                <div *ngIf="!curso.image">
-                                    <img class="img-responsive" src="./assets/images/no-image.jpg" alt="ursi galletti taller escuela orfebreria {{curso.title}}" style="width:100%" />
-                                </div>
-                                <div *ngIf="curso.image">
-                                    <img class="img-responsive" [src]="curso.image | imagenPipe: 'cursos'" alt="ursi galletti taller escuela orfebreria {{curso.title}}" style="width:100%" />
-                                </div>
+                                
+                                <img class="img-responsive" [src]="curso.avatar | imagenPipe: 'cursos'" alt="ursi galletti taller escuela orfebreria {{curso.title}}" style="width:100%" />
 
                             </div>
                             <h2>{{translate.currentLang === 'en' ? curso.name_eng : curso.name}}</h2>

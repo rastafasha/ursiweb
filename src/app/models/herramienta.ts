@@ -10,7 +10,8 @@ export class Herramienta {
   subtitle_eng: string;
   description_eng: string;
   price: any;
-  image: string;
+  image: string = "";
+    avatar: string = "";
   created_at: string;
   updated_at: string;
   status?: 'PUBLISHED' | 'PENDING' | 'REJECTED';

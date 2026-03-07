@@ -10,11 +10,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="woocommerce-product-gallery">
-                            <div *ngIf="!product.image">
+                            <!-- <div *ngIf="!product.image">
                                 <img class="img-responsive" src="./assets/images/no-image.jpg" width="100%" alt="ursi galletti taller escuela orfebreria {{product.name}}" />
-                            </div>
-                            <div *ngIf="product.image">
-                                <img class="img-responsive" [src]="product.image | imagenPipe: 'cursos'" width="100%" alt="ursi galletti taller escuela orfebreria {{product.name}}" />
+                            </div> -->
+                            <div *ngIf="product.avatar">
+                                <img class="img-responsive" [src]="product.avatar | imagenPipe: 'cursos'" width="100%" alt="ursi galletti taller escuela orfebreria {{product.name}}" />
                             </div>
                         </div>
                     </div>

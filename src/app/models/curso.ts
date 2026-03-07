@@ -11,7 +11,8 @@ export class Curso {
   description_eng: string;
   adicional_eng: string;
   price: number;
-  image: string;
+  image: string = "";
+    avatar: string = "";
   urlVideo: string;
   modal: string;
   slug: string;
@@ -36,13 +37,14 @@ export class Curso {
   get imagenUrl(){
 
     if(!this.image){
-      return `${base_url}/cursos/no-image.jpg`;
+      return `${base_url}no-image.png`;
     } else if(this.image.includes('https')){
       return this.image;
     } else if(this.image){
-      return `${base_url}/cursos/${this.image}`;
+      return `${base_url}${this.image}`;
     }else {
-      return `${base_url}/no-image.jpg`;
+      // return `${base_url}no-image.jpg`;
+      return `./assets/images/no-image.jpg`;
     }
 
   }

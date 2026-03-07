@@ -15,12 +15,12 @@
                     <h3>Modelo: {{pulsera.model}}</h3>
                     <h3>{{pulsera.title}}</h3>
                     <div class="sapo" [innerHtml]="pulsera.description | safe: 'html' "></div>
-                    <div *ngIf="pulsera.costo">
+                    <div *ngIf="pulsera.costo > 0">
                         <p class="price">{{pulsera.costo|currency}}</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <img [src]="pulsera.image | imagenPipe: 'pulseras'" alt="ursi galletti taller escuela orfebreria {{pulsera.title}}">
+                    <img [src]="pulsera.avatar | imagenPipe: 'pulseras'" alt="ursi galletti taller escuela orfebreria {{pulsera.title}}">
                 </div>
             </div>
             <!-- pulsera -->
