@@ -29,11 +29,11 @@
                         </div>
                         
                         <div class="desktop" >
-                            <img [src]="banner.image | imagenPipe: 'banners'" alt="ursi galletti taller escuela orfebreria {{banner.title}}">
+                            <img [src]="banner.avatar | imagenPipe: 'banners'" alt="ursi galletti taller escuela orfebreria {{banner.title}}">
 
                         </div>
-                        <div class="movil" *ngIf="banner.imagemovil">
-                            <img [src]="banner.imagemovil | imagenPipe: 'movil'" alt="ursi galletti taller escuela orfebreria {{banner.title}}">
+                        <div class="movil" >
+                            <img [src]="banner.avatarmovil | imagenPipe: 'banners'" alt="ursi galletti taller escuela orfebreria {{banner.title}}">
                         </div>
                     </div>
                 </div>
