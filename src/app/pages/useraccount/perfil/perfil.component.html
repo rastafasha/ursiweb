@@ -1,153 +1,177 @@
 <section class="sub-header shop-layout-1">
-    <img class="rellax bg-overlay" src="./assets/images/sub-header/profile.jpeg" alt="ursi galletti taller escuela orfebreria">
+    <img class="rellax bg-overlay" src="./assets/images/sub-header/profile.jpeg"
+        alt="ursi galletti taller escuela orfebreria">
     <div class="overlay-call-to-action"></div>
     <h3 class="heading-style-3">{{'Mi Perfil'|translate}}</h3>
 </section>
 <div class="container mt-3 mb-3">
     <div class="profile">
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-6">
-                <div class="card shadow-small">
-                    <div class="card-body">
-                        <div class="tofolow">
-                            <!-- <div class="imagen">
-                                <div *ngIf="!userprofile">
-                                    <img src="./assets/images/no-image.jpg" class="rounded-circle">
-                                </div>
-                                <div *ngIf="userprofile">
-                                    <img [src]="userprofile[0].profiles.image | imagenPipe: 'profiles'" [alt]="userprofile.username" class="rounded-circle">
-                                </div>
-                            </div> -->
-                            <div class="info">
-                                <h1>{{'Bienvenido'|translate}}!</h1>
-                                <h3>{{user.username}}</h3>
-                                <p><b>Email:</b> {{user.email}}</p>
-                                <p><b> {{'Miembro desde'|translate}}:</b> {{user.created_at | date:'mediumDate'}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4">
-                                <p><b>{{'Pais'|translate}}:</b> {{userprofile.profiles.pais}}</p>
-                                <p><b>{{'Estado'|translate}}:</b> {{userprofile.profiles.estado}}</p>
-                                <p><b>{{'Tel. home'|translate}}:</b> {{userprofile.profiles.telhome}}</p>
-                                <p><b>{{'Tel. movil'|translate}}:</b> {{userprofile.profiles.telmovil}}</p>
-                            </div>
-                            <div class="col-xs-12 col-sm-4">
 
-                                <p><b>Facebook:</b> {{userprofile.profiles.facebook}}</p>
-                                <p><b>Instagram:</b> {{userprofile.profiles.instagram}}</p>
-                                <p><b>Linkedin:</b> {{userprofile.profiles.linkedin}}</p>
-                                <p><b>Twitter:</b> {{userprofile.profiles.twitter}}</p>
+            <div class="tab-content-set">
+                <ul class="nav">
+                    <li>
+                        <a href="#" onclick="return false;" [ngClass]="{'active': option_selectedd == 1}"
+                            (click)="optionSelected(1)">{{'Mi Perfil'|translate}}</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false;" [ngClass]="{'active': option_selectedd == 2}"
+                            (click)="optionSelected(2)">{{'Editar Perfil'| translate}}</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false;" [ngClass]="{'active': option_selectedd == 3}"
+                            (click)="optionSelected(3)">{{'Mis Compras'|translate}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="option_selectedd == 1">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-push-2" style="padding-bottom: 30px;">
+                        <div class="col-12 col-sm-6 ">
+                    <div class="card shadow-small">
+                        <div class="card-body">
+                            <div class="tofolow">
+
+                                <div class="info">
+                                    <h1>{{'Bienvenido'|translate}}!</h1>
+                                    <h3>{{user.username}}</h3>
+                                    <p><b>Email:</b> {{user.email}}</p>
+                                    <p><b> {{'Miembro desde'|translate}}:</b> {{user.created_at | date:'mediumDate'}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <hr>
+                </div>
+                <div class="col-12 col-sm-6 ">
+                    <div class="col-xs-12 ">
+                        <p><b>{{'Pais'|translate}}:</b> {{profileSeleccionado?.pais}}</p>
+                        <p><b>{{'Estado'|translate}}:</b> {{profileSeleccionado?.estado}}</p>
+                        <p><b>{{'Tel. home'|translate}}:</b> {{profileSeleccionado?.telhome}}</p>
+                        <p><b>{{'Tel. movil'|translate}}:</b> {{profileSeleccionado?.telmovil}}</p>
+                    </div>
+                    <div class="col-xs-12 ">
 
-                    <form class="form-horizontal form-material" (ngSubmit)="guardarPerfil()" [formGroup]="perfilForm">
-                        <div class="row">
-
-                            <div class="col-xs-12 ">
-                                <div class="col-xs-12 col-md-6">
-                                    <label>{{'Nombres'|translate}}: <span class="required">*</span></label>
-                                    <input type="text" formControlName="nombre" class="form-control" required>
-
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <label>{{'Apellidos'|translate}}: <span class="required">*</span></label>
-                                    <input type="text" formControlName="surname" class="form-control" required>
-
-                                </div>
-
-
-                                <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">{{'Pais'|translate}}</label>
-                                    <input type="text" formControlName="pais" class="form-control">
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">{{'Estado'|translate}}</label>
-                                    <input type="text" formControlName="estado" class="form-control">
-                                </div>
-
-                                <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">{{'Tel. home'|translate}}  <span class="required">*</span></label>
-                                    <input type="text" formControlName="telhome" class="form-control" required>
-
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <label for="exampleInputEmail1">{{'Tel. movil'|translate}}  </label>
-                                    <input type="text" formControlName="telmovil" class="form-control">
-
-                                </div>
-                                <div class="clear"></div>
-                                <hr>
-                                <div class="col-xs-12">
-                                    <div>
-                                        <h4>{{'Redes Sociales'|translate}}</h4>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="redes">
-                                        <div class="col-xs-12 col-md-6">
-                                            <label for="facebook" class="col-xs-12 col-form-label">
-                        <i class="bi bi-facebook"></i> Facebook</label>
-                                            <div class="col-11">
-                                                <input type="text" class="form-control" formControlName="facebook" placeholder="@nombredeusuario">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <label for="instagram" class="col-xs-12 col-form-label">
-                      <i class="bi bi-instagram"></i> Instagram</label>
-                                            <div class="col-11">
-                                                <input type="text" class="form-control" formControlName="instagram" placeholder="@nombredeusuario">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <label for="twitter" class="col-xs-12 col-form-label">
-                    <i class="bi bi-twitter"></i> Twitter</label>
-                                            <div class="col-11">
-                                                <input type="text" class="form-control" formControlName="twitter" placeholder="@nombredeusuario">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <label for="linkedin" class="col-xs-12 col-form-label">
-                  <i class="bi bi-linkedin"></i> Linkedin</label>
-                                            <div class="col-11">
-                                                <input type="text" class="form-control" formControlName="linkedin" placeholder="@nombredeusuario">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <input type="hidden" formControlName="id">
-                        <div class="padding text-center">
-                            <button class="btn btn-outline-ursi m-r-10" type="submit" [disabled]="!perfilForm.valid">{{'Guardar'|translate}}</button>
-
-                        </div>
-
-
-                    </form>
+                        <p><b>Facebook:</b> {{profileSeleccionado?.facebook}}</p>
+                        <p><b>Instagram:</b> {{profileSeleccionado?.instagram}}</p>
+                        <p><b>Linkedin:</b> {{profileSeleccionado?.linkedin}}</p>
+                        <p><b>Twitter:</b> {{profileSeleccionado?.twitter}}</p>
+                    </div>
+                </div>
+                    </div>
                 </div>
             </div>
+            <div *ngIf="option_selectedd == 2">
+                <form class="form-horizontal form-material" (ngSubmit)="guardarPerfil()" [formGroup]="perfilForm">
+                    <div class="row">
 
-            <div class="col-12 col-sm-6 col-md-6">
-                <div class="card shadow-small padding">
-                    <div class="card-body">
-                        <h4>{{'Mis Compras'|translate}}</h4>
-                        <ul *ngFor="let payment of userprofile.payments |  paginate: { itemsPerPage: count, currentPage: p }">
-                            <li>
-                                <a [routerLink]="['/user-account/payment-detail', payment.id]">
-                {{'Referencia'|translate}}: {{payment.referencia}} | {{'Fecha'|translate}}: {{payment.created_at | date:'MMM d, y, h:mm:ss a'}}
-              </a>
-                            </li>
-                        </ul>
-                        <br />
-                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="col-xs-12 col-md-6">
+                                <label>{{'Nombres'|translate}}: <span class="required">*</span></label>
+                                <input type="text" formControlName="nombre" class="form-control" required>
 
-                        <!-- <ul class="nav nav-tabs nav-tabs-bordered">
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <label>{{'Apellidos'|translate}}: <span class="required">*</span></label>
+                                <input type="text" formControlName="surname" class="form-control" required>
+
+                            </div>
+
+
+                            <div class="col-xs-12 col-md-6">
+                                <label for="exampleInputEmail1">{{'Pais'|translate}}</label>
+                                <input type="text" formControlName="pais" class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <label for="exampleInputEmail1">{{'Estado'|translate}}</label>
+                                <input type="text" formControlName="estado" class="form-control">
+                            </div>
+
+                            <div class="col-xs-12 col-md-6">
+                                <label for="exampleInputEmail1">{{'Tel. home'|translate}} <span
+                                        class="required">*</span></label>
+                                <input type="text" formControlName="telhome" class="form-control" required>
+
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <label for="exampleInputEmail1">{{'Tel. movil'|translate}} </label>
+                                <input type="text" formControlName="telmovil" class="form-control">
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div>
+                                <h4>{{'Redes Sociales'|translate}}</h4>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="redes">
+                                <div class="col-xs-12 col-md-6">
+                                    <label for="facebook" class="col-xs-12 col-form-label">
+                                        <i class="bi bi-facebook"></i> Facebook</label>
+                                    <div class="col-11">
+                                        <input type="text" class="form-control" formControlName="facebook"
+                                            placeholder="@nombredeusuario">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <label for="instagram" class="col-xs-12 col-form-label">
+                                        <i class="bi bi-instagram"></i> Instagram</label>
+                                    <div class="col-11">
+                                        <input type="text" class="form-control" formControlName="instagram"
+                                            placeholder="@nombredeusuario">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <label for="twitter" class="col-xs-12 col-form-label">
+                                        <i class="bi bi-twitter"></i> Twitter</label>
+                                    <div class="col-11">
+                                        <input type="text" class="form-control" formControlName="twitter"
+                                            placeholder="@nombredeusuario">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <label for="linkedin" class="col-xs-12 col-form-label">
+                                        <i class="bi bi-linkedin"></i> Linkedin</label>
+                                    <div class="col-11">
+                                        <input type="text" class="form-control" formControlName="linkedin"
+                                            placeholder="@nombredeusuario">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" formControlName="id">
+                    <div class="padding text-center">
+                        <button class="btn btn-outline-ursi m-r-10" type="submit"
+                            [disabled]="!perfilForm.valid">{{'Guardar'|translate}}</button>
+
+                    </div>
+
+
+                </form>
+            </div>
+            <div *ngIf="option_selectedd == 3">
+                <div class="col-12 col-sm-6 col-md-6">
+                    <div class="card shadow-small padding">
+                        <div class="card-body">
+                            <h4>{{'Mis Compras'|translate}}</h4>
+                            <ul *ngFor="let payment of payments |  paginate: { itemsPerPage: count, currentPage: p }">
+                                <li>
+                                    <a [routerLink]="['/user-account/payment-detail', payment.id]">
+                                        {{'Referencia'|translate}}: {{payment.referencia}} | {{'Fecha'|translate}}:
+                                        {{payment.created_at | date:'MMM d, y, h:mm:ss a'}}
+                                    </a>
+                                </li>
+                            </ul>
+                            <br />
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                            <!-- <ul class="nav nav-tabs nav-tabs-bordered">
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#compras">Compras</button>
                             </li>
@@ -285,9 +309,11 @@
 
 
 
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

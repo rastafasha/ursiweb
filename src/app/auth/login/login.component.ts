@@ -74,8 +74,8 @@ login(){
       }else{
         localStorage.removeItem('email');
       }
-      this.refresh();
-      this.router.navigateByUrl('/home');
+      // this.refresh();
+      this.router.navigate(['/user-account', this.user.id]);
 
     },(error) => {
       Swal.fire('Error', error.error.msg, 'error');

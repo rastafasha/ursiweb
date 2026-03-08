@@ -45,6 +45,13 @@ export class ProfileService {
         map((resp:{ok: boolean, profile: Profile}) => resp.profile)
         );
   }
+  getProfileUser(user: any) {
+    const url = `${baseUrl}/profile/user/${user}`;
+    return this.http.get<any>(url, this.headers)
+      .pipe(
+        map((resp:{ok: boolean, profile: Profile}) => resp.profile)
+        );
+  }
 
 
   createProfile(profile:any) {
@@ -52,7 +59,7 @@ export class ProfileService {
     return this.http.post(url, profile, this.headers);
   }
 
-  updateProfile(profile:Profile, id:number) {
+  updateProfile(profile:any, id:number) {
     // const url = `${baseUrl}/profile/update/${profile.id}`;
     // return this.http.put(url, profile, this.headers);
     return this.http.put<any>(baseUrl + '/profile/update/' + id, profile, this.headers)

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Payment } from 'src/app/models/payment';
 import { Profile } from 'src/app/models/profile';
 import { User } from 'src/app/models/user';
 import { AccountService } from 'src/app/services/account.service';
+import { PaymentService } from 'src/app/services/payment.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
@@ -30,45 +32,25 @@ export class PerfilComponent implements OnInit {
   pageTitle: string;
   errors:any = null;
   infoProfile: any;
+  payments: Payment;
 
   public storage = environment.apiUrlMedia;
-  public afuConfig = {
-    multiple: false,
-    formatsAllowed: '.jpg, .png, .gif, .jpeg',
-    method: 'POST',
-    maxSize: '2',
-    uploadAPI: {
-      url: environment.apiUrl + '/profile/upload',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Bearer ' + this.accountService.headers
-
-      },
-      responseType: 'json',
-    },
-    theme: 'dragNDrop',
-    selectFileBtn: 'Select Files',
-    hideProgressBar: false,
-    hideResetBtn: false,
-    hideSelectBtn: false,
-    fileNameIndex: true,
-    replaceTexts: {
-      selectFileBtn: 'Seleccionar imagen',
-      resetBtn: 'Resetear',
-      uploadBtn: 'Subir',
-      dragNDropBox: 'Arrastre y suelte aquí',
-      attachPinBtn: 'Seleccionar una imagen',
-      afterUploadMsg_success: 'Se cargó correctamente el archivo !',
-      afterUploadMsg_error: 'Se produjo un error al subir el archivo!',
-      sizeLimit: 'Límite de tamaño 2 Megas'
-    }
-  };
+   imageUrl = environment.apiUrlMedia;
+  public FILE_AVATAR: any;
+  public IMAGE_PREVISUALIZA: any = "assets/images/no-image.png";
+  text_validation: any = null;
+  public loading: boolean = false;
+  userId:number;
+  imagePath: string;
+  option_selectedd:number = 1;
+  solicitud_selectedd:any = null;
 
   constructor(
     private userService: UserService,
     private profileService: ProfileService,
     private activatedRoute: ActivatedRoute,
     private accountService: AccountService,
+     private paymentService: PaymentService,
     private fb: FormBuilder,
   ) {
     this.user = userService.user;
@@ -84,16 +66,15 @@ export class PerfilComponent implements OnInit {
 
   getUser(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
-    this.id = this.user.id;
+    this.userId = this.user.id;
 
   }
 
   getUserServer(id:number){
     this.userService.getUserById(id).subscribe(
       res =>{
-        this.userprofile = res[0];
+        this.userprofile = res;
         error => this.error = error
-        // console.log(this.userprofile);
       }
     );
 
@@ -104,31 +85,38 @@ export class PerfilComponent implements OnInit {
     }
   }
 
+  getPaymentUser(){
+    this.paymentService.getPagosbyUser(this.user.id).subscribe((resp:any)=>{
+      this.payments = resp;
+    })
+  }
+
 
   iniciarFormularioPerfil(id:number){
     if (!id == null || !id == undefined || id) {
       // let id = this.directory.id;
       this.pageTitle = 'Editar Perfil';
-      this.userService.getUserById(+id).subscribe(
+      this.profileService.getProfileUser(+id).subscribe(
         res => {
           this.perfilForm.patchValue({
             id: res.id,
-            nombre: this.userprofile.profiles.nombre,
-            surname: this.userprofile.profiles.surname,
-            direccion: this.userprofile.profiles.direccion,
-            pais: this.userprofile.profiles.pais,
-            estado: this.userprofile.profiles.estado,
-            telhome: this.userprofile.profiles.telhome,
-            telmovil: this.userprofile.profiles.telmovil,
-            facebook: this.userprofile.profiles.facebook,
-            instagram: this.userprofile.profiles.instagram,
-            twitter: this.userprofile.profiles.twitter,
-            linkedin: this.userprofile.profiles.linkedin,
+            nombre: res.nombre,
+            surname: res.surname,
+            direccion: res.direccion,
+            pais: res.pais,
+            estado: res.estado,
+            telhome: res.telhome,
+            telmovil: res.telmovil,
+            facebook: res.facebook,
+            instagram: res.instagram,
+            twitter: res.twitter,
+            linkedin: res.linkedin,
             user_id: res.user_id,
             status: res.status,
           });
           this.profileSeleccionado = res;
-          console.log(this.profileSeleccionado);
+          this.imagePath = res.avatar;
+          // console.log(this.profileSeleccionado);
 
         }
       );
@@ -159,18 +147,16 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-  avatarUpload(datos) {
-    const data = JSON.parse(datos.response);
-    this.perfilForm.controls['image'].setValue(data.image);//almaceno el nombre de la imagen
-  }
-
-  deleteFotoPerfil(){
-    this.profileService.deleteFoto(this.perfilForm.value['id']).subscribe(response => {
-      Swal.fire(response['msg']['summary'], response['msg']['detail'], 'success');
-      this.ngOnInit();
-    }, error => {
-      Swal.fire('Error al eliminar', 'Intente de nuevo', 'error');
-    });
+  loadFile($event: any) {
+     if ($event.target.files[0].type.indexOf("image")) {
+      this.text_validation = "Solamente pueden ser archivos de tipo imagen";
+      return;
+    }
+    this.text_validation = "";
+    this.FILE_AVATAR = $event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(this.FILE_AVATAR);
+    reader.onloadend = () => (this.IMAGE_PREVISUALIZA = reader.result);
   }
 
   get nombre() { return this.perfilForm.get('nombre'); }
@@ -184,7 +170,6 @@ export class PerfilComponent implements OnInit {
   get twitter() { return this.perfilForm.get('twitter'); }
   get linkedin() { return this.perfilForm.get('linkedin'); }
   get user_id() { return this.perfilForm.get('user_id'); }
-  get image() { return this.perfilForm.get('image'); }
   get status() { return this.perfilForm.get('status'); }
 
 
@@ -201,20 +186,17 @@ export class PerfilComponent implements OnInit {
     formData.append('instagram', this.perfilForm.get('instagram')?.value);
     formData.append('twitter', this.perfilForm.get('twitter')?.value);
     formData.append('linkedin', this.perfilForm.get('linkedin')?.value);
-    formData.append('image', this.perfilForm.get('image').value);
-    formData.append('user_id', this.perfilForm.get('user_id').value);
+    formData.append('user_id', this.userId.toString());
     formData.append('status', 'PENDING');
 
     const id = this.userprofile.id;
-
+    if (this.FILE_AVATAR) {
+         formData.append("imagen", this.FILE_AVATAR);
+       }
 
     if (id) {
-      const data = {
-        ...this.perfilForm.value,
-        user_id: this.user.id,
-        status: 'PENDING'
-      }
-      this.profileService.updateProfile(data, +id).subscribe(
+      
+      this.profileService.updateProfile(formData, +id).subscribe(
         res => {
           this.infoProfile = res;
             Swal.fire('Guardado', 'Los cambios fueron actualizados', 'success');
@@ -223,11 +205,8 @@ export class PerfilComponent implements OnInit {
         error => this.errors = error
       );
     } else {
-      const data = {
-        ...this.perfilForm.value,
-        user_id: this.user.id,
-      }
-      this.profileService.createProfile(data).subscribe(
+      
+      this.profileService.createProfile(formData).subscribe(
         res => {
           this.infoProfile = res;
             Swal.fire('Guardado', 'Los cambios fueron creados', 'success');
@@ -312,6 +291,16 @@ cambiarPassword(){
         });
     }
   }
+
+  optionSelected(value:number){
+      this.option_selectedd = value;
+      if(this.option_selectedd === 1){
+        // this.ngOnInit();
+      }
+      if(this.option_selectedd === 2){
+        this.solicitud_selectedd = null;
+      }
+    }
 
 
 
