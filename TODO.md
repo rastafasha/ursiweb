@@ -5,8 +5,8 @@
 - [x] Switch to Node.js 22 via nvm (`nvm use 22`)
 - [x] Verify versions: Node 22.11.2, Angular CLI local 14.2.13
 - [x] Install global Angular CLI 19: `npm install -g @angular/cli@19`
-- [x] Run `ng update @angular/cli@19 @angular/core@19` (running, fetching metadata...)
-- [ ] Clean install: `rm -rf node_modules package-lock.json && npm install`
+- [ ] Run `ng update @angular/cli@19 @angular/core@19` (stalled/failed, package.json unchanged; plan incremental)
+- [x] Clean install: `rm -rf node_modules package-lock.json && npm install` (executed)
 - [ ] Update peer deps (e.g., @angular/cdk ^19)
 
 ## Phase 2: Breaking Changes
