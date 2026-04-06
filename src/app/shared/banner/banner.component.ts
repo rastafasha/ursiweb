@@ -5,9 +5,10 @@ import { BannerService } from 'src/app/services/banner.service';
 // import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+    selector: 'app-banner',
+    templateUrl: './banner.component.html',
+    styleUrls: ['./banner.component.css'],
+    standalone: false
 })
 export class BannerComponent implements OnInit {
 

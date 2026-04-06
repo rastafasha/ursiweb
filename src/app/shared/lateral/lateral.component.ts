@@ -6,9 +6,10 @@ import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
-  selector: 'app-lateral',
-  templateUrl: './lateral.component.html',
-  styleUrls: ['./lateral.component.css']
+    selector: 'app-lateral',
+    templateUrl: './lateral.component.html',
+    styleUrls: ['./lateral.component.css'],
+    standalone: false
 })
 export class LateralComponent implements OnInit{
 

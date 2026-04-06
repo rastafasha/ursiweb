@@ -4,9 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { Herramienta } from 'src/app/models/herramienta';
 import { HerramientaService } from 'src/app/services/herramienta.service';
 @Component({
-  selector: 'app-herramientas',
-  templateUrl: './herramientas.component.html',
-  styleUrls: ['./herramientas.component.css']
+    selector: 'app-herramientas',
+    templateUrl: './herramientas.component.html',
+    styleUrls: ['./herramientas.component.css'],
+    standalone: false
 })
 export class HerramientasComponent implements OnInit {
 

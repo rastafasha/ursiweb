@@ -4,9 +4,10 @@ import { Expocaf } from 'src/app/models/expocaf';
 import { ExpocafService } from 'src/app/services/expocaf.service';
 
 @Component({
-  selector: 'app-expocaf',
-  templateUrl: './expocaf.component.html',
-  styleUrls: ['./expocaf.component.css']
+    selector: 'app-expocaf',
+    templateUrl: './expocaf.component.html',
+    styleUrls: ['./expocaf.component.css'],
+    standalone: false
 })
 export class ExpocafComponent implements OnInit {
 

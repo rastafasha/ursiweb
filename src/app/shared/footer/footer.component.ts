@@ -4,9 +4,10 @@ import { SubcripcionService } from 'src/app/services/subcripcion.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.css'],
+    standalone: false
 })
 export class FooterComponent implements OnInit{
   email = new FormControl();

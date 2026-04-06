@@ -4,9 +4,10 @@ import { Cronologiacurso } from 'src/app/models/cronologiacurso';
 import { CronologiacursosService } from 'src/app/services/cronologiacursos.service';
 
 @Component({
-  selector: 'app-cronograma-de-cursos',
-  templateUrl: './cronograma-de-cursos.component.html',
-  styleUrls: ['./cronograma-de-cursos.component.css']
+    selector: 'app-cronograma-de-cursos',
+    templateUrl: './cronograma-de-cursos.component.html',
+    styleUrls: ['./cronograma-de-cursos.component.css'],
+    standalone: false
 })
 export class CronogramaDeCursosComponent implements OnInit{
 

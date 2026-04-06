@@ -7,9 +7,10 @@ import { CategoryService } from 'src/app/services/category.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-post-by-category',
-  templateUrl: './post-by-category.component.html',
-  styleUrls: ['./post-by-category.component.css']
+    selector: 'app-post-by-category',
+    templateUrl: './post-by-category.component.html',
+    styleUrls: ['./post-by-category.component.css'],
+    standalone: false
 })
 export class PostByCategoryComponent implements OnInit{
 

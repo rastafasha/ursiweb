@@ -4,9 +4,10 @@ import { Curso } from 'src/app/models/curso';
 import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
-  selector: 'app-destacados',
-  templateUrl: './destacados.component.html',
-  styleUrls: ['./destacados.component.css']
+    selector: 'app-destacados',
+    templateUrl: './destacados.component.html',
+    styleUrls: ['./destacados.component.css'],
+    standalone: false
 })
 export class DestacadosComponent implements OnInit{
   isLoading: boolean = false;

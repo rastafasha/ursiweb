@@ -4,9 +4,10 @@ import { Dije } from 'src/app/models/dije';
 import { DijeService } from 'src/app/services/dije.service';
 
 @Component({
-  selector: 'app-dijes',
-  templateUrl: './dijes.component.html',
-  styleUrls: ['./dijes.component.css']
+    selector: 'app-dijes',
+    templateUrl: './dijes.component.html',
+    styleUrls: ['./dijes.component.css'],
+    standalone: false
 })
 export class DijesComponent implements OnInit {
   isLoading = false;

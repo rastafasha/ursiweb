@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-curso-online-de-orfebria-en-vivo',
-  templateUrl: './curso-online-de-orfebria-en-vivo.component.html',
-  styleUrls: ['./curso-online-de-orfebria-en-vivo.component.css']
+    selector: 'app-curso-online-de-orfebria-en-vivo',
+    templateUrl: './curso-online-de-orfebria-en-vivo.component.html',
+    styleUrls: ['./curso-online-de-orfebria-en-vivo.component.css'],
+    standalone: false
 })
 export class CursoOnlineDeOrfebriaEnVivoComponent implements OnInit{
 

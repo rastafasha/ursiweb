@@ -4,9 +4,10 @@ import { Arete } from 'src/app/models/arete';
 import { AreteService } from 'src/app/services/arete.service';
 
 @Component({
-  selector: 'app-aretes',
-  templateUrl: './aretes.component.html',
-  styleUrls: ['./aretes.component.css']
+    selector: 'app-aretes',
+    templateUrl: './aretes.component.html',
+    styleUrls: ['./aretes.component.css'],
+    standalone: false
 })
 export class AretesComponent implements OnInit {
 

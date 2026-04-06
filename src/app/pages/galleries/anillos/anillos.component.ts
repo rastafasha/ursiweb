@@ -4,9 +4,10 @@ import { Anillo } from 'src/app/models/anillo';
 import { AnilloService } from 'src/app/services/anillo.service';
 
 @Component({
-  selector: 'app-anillos',
-  templateUrl: './anillos.component.html',
-  styleUrls: ['./anillos.component.css']
+    selector: 'app-anillos',
+    templateUrl: './anillos.component.html',
+    styleUrls: ['./anillos.component.css'],
+    standalone: false
 })
 export class AnillosComponent implements OnInit {
 

@@ -10,9 +10,10 @@ declare var jQuery: any;
 
 
 @Component({
-  selector: 'app-modal-producto',
-  templateUrl: './modal-producto.component.html',
-  styleUrls: ['./modal-producto.component.css']
+    selector: 'app-modal-producto',
+    templateUrl: './modal-producto.component.html',
+    styleUrls: ['./modal-producto.component.css'],
+    standalone: false
 })
 export class ModalProductoComponent implements OnInit, OnChanges{
 

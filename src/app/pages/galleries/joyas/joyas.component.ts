@@ -4,9 +4,10 @@ import { Joya } from 'src/app/models/joya';
 import { JoyaService } from 'src/app/services/joya.service';
 
 @Component({
-  selector: 'app-joyas',
-  templateUrl: './joyas.component.html',
-  styleUrls: ['./joyas.component.css']
+    selector: 'app-joyas',
+    templateUrl: './joyas.component.html',
+    styleUrls: ['./joyas.component.css'],
+    standalone: false
 })
 export class JoyasComponent  implements OnInit {
   isLoading = false;

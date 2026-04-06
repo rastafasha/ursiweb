@@ -7,9 +7,10 @@ import { CursosService } from 'src/app/services/cursos.service';
 import { MessageService } from 'src/app/services/message.service';
 
 @Component({
-  selector: 'app-curso',
-  templateUrl: './curso.component.html',
-  styleUrls: ['./curso.component.css']
+    selector: 'app-curso',
+    templateUrl: './curso.component.html',
+    styleUrls: ['./curso.component.css'],
+    standalone: false
 })
 export class CursoComponent implements OnInit {
   isLoading: boolean = false;

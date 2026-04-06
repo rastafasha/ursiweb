@@ -12,9 +12,10 @@ const mediaUrl = environment.apiUrlMedia;
 
 
 @Component({
-  selector: 'app-blog-detail',
-  templateUrl: './blog-detail.component.html',
-  styleUrls: ['./blog-detail.component.css']
+    selector: 'app-blog-detail',
+    templateUrl: './blog-detail.component.html',
+    styleUrls: ['./blog-detail.component.css'],
+    standalone: false
 })
 export class BlogDetailComponent implements OnInit {
 

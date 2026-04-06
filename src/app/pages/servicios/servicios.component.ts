@@ -5,9 +5,10 @@ import { ServiciosService } from '../../services/servicios.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-servicios',
-  templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.css']
+    selector: 'app-servicios',
+    templateUrl: './servicios.component.html',
+    styleUrls: ['./servicios.component.css'],
+    standalone: false
 })
 export class ServiciosComponent implements OnInit{
   isLoading = false;

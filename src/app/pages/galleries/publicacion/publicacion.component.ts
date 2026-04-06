@@ -4,9 +4,10 @@ import { Publicacion } from 'src/app/models/publicacion';
 import { PublicacionService } from 'src/app/services/publicacion.service';
 import {environment} from 'src/environments/environment';
 @Component({
-  selector: 'app-publicacion',
-  templateUrl: './publicacion.component.html',
-  styleUrls: ['./publicacion.component.css']
+    selector: 'app-publicacion',
+    templateUrl: './publicacion.component.html',
+    styleUrls: ['./publicacion.component.css'],
+    standalone: false
 })
 export class PublicacionComponent implements OnInit {
 

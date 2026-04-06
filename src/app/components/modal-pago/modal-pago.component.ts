@@ -11,9 +11,10 @@ import { PaymentService } from 'src/app/services/payment.service';
 import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
-  selector: 'app-modal-pago',
-  templateUrl: './modal-pago.component.html',
-  styleUrls: ['./modal-pago.component.css']
+    selector: 'app-modal-pago',
+    templateUrl: './modal-pago.component.html',
+    styleUrls: ['./modal-pago.component.css'],
+    standalone: false
 })
 export class ModalPagoComponent implements OnInit{
   @Input() amount;

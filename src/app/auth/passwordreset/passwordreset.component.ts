@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 import Swal from 'sweetalert2';
 @Component({
-  selector: 'app-passwordreset',
-  templateUrl: './passwordreset.component.html',
-  styleUrls: ['./passwordreset.component.css']
+    selector: 'app-passwordreset',
+    templateUrl: './passwordreset.component.html',
+    styleUrls: ['./passwordreset.component.css'],
+    standalone: false
 })
 export class PasswordresetComponent implements OnInit {
   email = new FormControl();

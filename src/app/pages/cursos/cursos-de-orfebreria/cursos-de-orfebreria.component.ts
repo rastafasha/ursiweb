@@ -7,9 +7,10 @@ import { MessageService } from 'src/app/services/message.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-cursos-de-orfebreria',
-  templateUrl: './cursos-de-orfebreria.component.html',
-  styleUrls: ['./cursos-de-orfebreria.component.css']
+    selector: 'app-cursos-de-orfebreria',
+    templateUrl: './cursos-de-orfebreria.component.html',
+    styleUrls: ['./cursos-de-orfebreria.component.css'],
+    standalone: false
 })
 export class CursosDeOrfebreriaComponent implements OnInit {
   
