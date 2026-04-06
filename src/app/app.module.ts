@@ -25,7 +25,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { SharethisAngularModule } from 'sharethis-angular';
 
 // angular file uploader
-import { AngularFileUploaderModule } from 'angular-file-uploader';
+// import { AngularFileUploaderModule } from 'angular-file-uploader';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { TranslateModule, TranslateLoader, TranslateService, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translate/http-loader';
@@ -49,7 +49,7 @@ export function cargarTraductor(http: HttpClient) {
         AuthModule,
         SharethisAngularModule,
         NgxPaginationModule,
-        AngularFileUploaderModule,
+        // AngularFileUploaderModule,
         ScrollingModule,
         TranslateModule.forRoot({
             loader: {

@@ -1,7 +1,7 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Escuela } from 'src/app/models/escuela';
-import { EscuelaService } from 'src/app/services/escuela.service';
+import { Escuela } from '../../../models/escuela';
+import { EscuelaService } from '../../../services/escuela.service';
 
 @Component({
     selector: 'app-escuela',

@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User } from 'src/app/models/user';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from 'src/app/services/user.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Curso } from 'src/app/models/curso';
-import { Payment } from 'src/app/models/payment';
-import { PaymentService } from 'src/app/services/payment.service';
-import { CursosService } from 'src/app/services/cursos.service';
+import { Curso } from '../../models/curso';
+import { Payment } from '../../models/payment';
+import { User } from '../../models/user';
+import { CursosService } from '../../services/cursos.service';
+import { PaymentService } from '../../services/payment.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-modal-pago',

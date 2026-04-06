@@ -1,7 +1,7 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
-import { Joya } from 'src/app/models/joya';
-import { JoyaService } from 'src/app/services/joya.service';
+import { Joya } from '../../../models/joya';
+import { JoyaService } from '../../../services/joya.service';
 
 @Component({
     selector: 'app-joyas',

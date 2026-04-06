@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioTitle } from 'src/app/models/serviciotitle';
-import { ServiciosService } from '../../services/servicios.service';
-import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
-import { AccountService } from 'src/app/services/account.service';
-import { ActivatedRoute } from '@angular/router';
-import { ProfileService } from 'src/app/services/profile.service';
-import { Profile } from 'src/app/models/profile';
 import { TranslateService } from '@ngx-translate/core';
+import { Profile } from '../../models/profile';
+import { ServicioTitle } from '../../models/serviciotitle';
+import { User } from '../../models/user';
+import { AccountService } from '../../services/account.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-header',

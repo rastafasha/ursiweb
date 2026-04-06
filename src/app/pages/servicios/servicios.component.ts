@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, DomSanitizer } from '@angular/platform-browser';
-import { Servicio } from 'src/app/models/servicio';
 import { ServiciosService } from '../../services/servicios.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Servicio } from '../../models/servicio';
 
 @Component({
     selector: 'app-servicios',

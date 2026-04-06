@@ -1,7 +1,7 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Expocaf } from 'src/app/models/expocaf';
-import { ExpocafService } from 'src/app/services/expocaf.service';
+import { Expocaf } from '../../../models/expocaf';
+import { ExpocafService } from '../../../services/expocaf.service';
 
 @Component({
     selector: 'app-expocaf',

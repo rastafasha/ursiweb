@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
-import { SubcripcionService } from 'src/app/services/subcripcion.service';
 import Swal from 'sweetalert2';
+import { SubcripcionService } from '../../services/subcripcion.service';
 
 @Component({
     selector: 'app-footer',

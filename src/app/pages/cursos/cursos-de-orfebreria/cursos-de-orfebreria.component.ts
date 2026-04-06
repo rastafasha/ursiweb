@@ -1,10 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Curso } from 'src/app/models/curso';
-import { User } from 'src/app/models/user';
-import { CursosService } from 'src/app/services/cursos.service';
-import { MessageService } from 'src/app/services/message.service';
-import { UserService } from 'src/app/services/user.service';
+import { Curso } from '../../../models/curso';
+import { User } from '../../../models/user';
+import { CursosService } from '../../../services/cursos.service';
+import { MessageService } from '../../../services/message.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
     selector: 'app-cursos-de-orfebreria',

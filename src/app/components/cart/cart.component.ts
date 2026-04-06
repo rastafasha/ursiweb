@@ -9,11 +9,10 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from "ngx-spinner";
-
 import { Router } from '@angular/router';
-import { Curso } from 'src/app/models/curso';
-// import { PaymentService } from 'src/app/services/payment.service';
-import { MessageService } from 'src/app/services/message.service';
+import { Curso } from '../../models/curso';
+import { MessageService } from '../../services/message.service';
+
 
 
 @Component({

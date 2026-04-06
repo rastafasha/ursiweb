@@ -1,7 +1,7 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Anillo } from 'src/app/models/anillo';
-import { AnilloService } from 'src/app/services/anillo.service';
+import { Anillo } from '../../../models/anillo';
+import { AnilloService } from '../../../services/anillo.service';
 
 @Component({
     selector: 'app-anillos',

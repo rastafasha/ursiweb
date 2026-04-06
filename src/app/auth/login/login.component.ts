@@ -2,9 +2,9 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
-import { AccountService } from 'src/app/services/account.service';
-import { UserService } from 'src/app/services/user.service';
+import { User } from '../../models/user';
+import { AccountService } from '../../services/account.service';
+import { UserService } from '../../services/user.service';
 declare const gapi: any;
 
 

@@ -1,7 +1,7 @@
 
+import { environment } from "../../environments/environment";
 import { Payment } from "./payment";
 import { Profile } from "./profile";
-import { environment } from "src/environments/environment";
 const base_url = environment.apiUrlMedia;
 export class User {
 

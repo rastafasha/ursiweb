@@ -1,9 +1,8 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { Curso } from 'src/app/models/curso';
-import { CursosService } from 'src/app/services/cursos.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { Curso } from '../../models/curso';
+import { CursosService } from '../../services/cursos.service';
 
 // Declare jQuery as any to avoid TypeScript errors
 declare var jQuery: any;

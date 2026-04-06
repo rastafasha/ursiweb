@@ -28,10 +28,12 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
         LateralComponent,
         BlogListComponent,
         LoadingComponent
-    ], imports: [CommonModule,
+    ], 
+    imports: [CommonModule,
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
         PipesModule,
-        TranslateModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        TranslateModule], 
+        providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class SharedModule { }

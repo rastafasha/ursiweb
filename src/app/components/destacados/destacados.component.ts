@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Curso } from 'src/app/models/curso';
-import { CursosService } from 'src/app/services/cursos.service';
+import { Curso } from '../../models/curso';
+import { CursosService } from '../../services/cursos.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
     selector: 'app-destacados',
@@ -13,10 +14,14 @@ export class DestacadosComponent implements OnInit{
   isLoading: boolean = false;
   cursos: Curso;
   error:string;
+  selectedProduct: Curso = null;
+
+  curso:any;
 
   constructor(
     public cursoService: CursosService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private messageService: MessageService,
   ){}
 
   ngOnInit(): void {
@@ -34,5 +39,12 @@ export class DestacadosComponent implements OnInit{
       }
     );
 
+  }
+
+   openModal(curso:Curso): void {
+    // Send the product to the parent component for modal display (separate from cart)
+    this.selectedProduct = curso
+    console.log(curso)
+    this.messageService.sendModalProduct(this.selectedProduct);
   }
 }

@@ -3,8 +3,6 @@ import { environment } from '../../environments/environment';
 import { RegisterForm } from '../interface/register-form.interface';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {map} from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

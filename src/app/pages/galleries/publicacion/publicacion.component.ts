@@ -1,8 +1,8 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Publicacion } from 'src/app/models/publicacion';
-import { PublicacionService } from 'src/app/services/publicacion.service';
-import {environment} from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
+import { Publicacion } from '../../../models/publicacion';
+import { PublicacionService } from '../../../services/publicacion.service';
 @Component({
     selector: 'app-publicacion',
     templateUrl: './publicacion.component.html',

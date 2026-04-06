@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.20",
-    "@angular/cdk": "^15.2.0",
+    "@angular/cdk": "^16.2.0",
     "@angular/common": "^19.2.20",
     "@angular/compiler": "^19.2.20",
     "@angular/core": "^19.2.20",
@@ -35,7 +35,7 @@
     "dompurify": "^2.3.0",
     "jquery": "^3.6.4",
     "ngx-infinite-scroll": "^19.0.0",
-    "ngx-pagination": "^4.1.0",
+    "ngx-pagination": "^6.0.3",
     "ngx-paypal": "^11.0.0",
     "ngx-sharebuttons": "^12.0.0",
     "ngx-spinner": "^15.0.1",

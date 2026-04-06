@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Payment } from 'src/app/models/payment';
-import { Profile } from 'src/app/models/profile';
-import { User } from 'src/app/models/user';
-import { AccountService } from 'src/app/services/account.service';
-import { PaymentService } from 'src/app/services/payment.service';
-import { ProfileService } from 'src/app/services/profile.service';
-import { UserService } from 'src/app/services/user.service';
-import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { environment } from '../../../../environments/environment';
+import { Payment } from '../../../models/payment';
+import { Profile } from '../../../models/profile';
+import { User } from '../../../models/user';
+import { AccountService } from '../../../services/account.service';
+import { PaymentService } from '../../../services/payment.service';
+import { ProfileService } from '../../../services/profile.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
     selector: 'app-perfil',

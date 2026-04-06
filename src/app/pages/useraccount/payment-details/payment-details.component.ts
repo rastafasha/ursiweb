@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Payment } from 'src/app/models/payment';
-import { PaymentService } from 'src/app/services/payment.service';
+import { Payment } from '../../../models/payment';
+import { PaymentService } from '../../../services/payment.service';
 @Component({
     selector: 'app-payment-details',
     templateUrl: './payment-details.component.html',

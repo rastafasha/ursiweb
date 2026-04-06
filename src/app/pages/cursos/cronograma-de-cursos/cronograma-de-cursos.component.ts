@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Cronologiacurso } from 'src/app/models/cronologiacurso';
-import { CronologiacursosService } from 'src/app/services/cronologiacursos.service';
+import { Cronologiacurso } from '../../../models/cronologiacurso';
+import { CronologiacursosService } from '../../../services/cronologiacursos.service';
 
 @Component({
     selector: 'app-cronograma-de-cursos',

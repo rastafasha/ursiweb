@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { AccountService } from 'src/app/services/account.service';
+import { AccountService } from '../../services/account.service';
 @Component({
     selector: 'app-newpassword',
     templateUrl: './newpassword.component.html',

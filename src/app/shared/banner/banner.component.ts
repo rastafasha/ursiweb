@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpBackend } from '@angular/common/http';
-import { Banner } from 'src/app/models/banner';
-import { BannerService } from 'src/app/services/banner.service';
+import { Banner } from '../../models/banner';
+import { BannerService } from '../../services/banner.service';
 // import * as $ from 'jquery';
 
 @Component({

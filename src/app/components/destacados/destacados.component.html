@@ -13,9 +13,9 @@
                     <div class="card servicio">
                         <div class="card-body">
                             <div class="imagen">
-                                
-                                <img class="img-responsive" [src]="curso.avatar | imagenPipe: 'cursos'" alt="ursi galletti taller escuela orfebreria {{curso.title}}" style="width:100%" />
-
+                                <a type="button" (click)="openModal(curso)" href="javascript:void(0)"  data-toggle="modal" [attr.data-target]="'#' + curso.modal">
+                                    <img class="img-responsive" [src]="curso.avatar | imagenPipe: 'cursos'" alt="ursi galletti taller escuela orfebreria {{curso.title}}" style="width:100%" />
+                                </a>
                             </div>
                             <h2>{{translate.currentLang === 'en' ? curso.name_eng : curso.name}}</h2>
                             <div class="sapo introHome" [innerHtml]="translate.currentLang === 'en' ? curso.adicional_eng : curso.adicional | safe: 'html'"></div>
@@ -28,3 +28,5 @@
         </div>
     </div>
 </section>
+
+<app-modal-producto [product]="selectedProduct"></app-modal-producto>
