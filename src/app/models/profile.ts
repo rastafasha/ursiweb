@@ -1,5 +1,5 @@
-import { environment } from "src/environments/environment";
-import { Post } from "./post";
+
+import { environment } from "../../environments/environment";
 const base_url = environment.apiUrlMedia;
 export class Profile {
 

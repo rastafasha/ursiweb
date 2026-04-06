@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { Category } from 'src/app/models/category';
-import { CategoryService } from 'src/app/services/category.service';
+import { Category } from '../../models/category';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
-  selector: 'app-lateral',
-  templateUrl: './lateral.component.html',
-  styleUrls: ['./lateral.component.css']
+    selector: 'app-lateral',
+    templateUrl: './lateral.component.html',
+    styleUrls: ['./lateral.component.css'],
+    standalone: false
 })
 export class LateralComponent implements OnInit{
 

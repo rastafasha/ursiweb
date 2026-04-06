@@ -1,12 +1,13 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Dije } from 'src/app/models/dije';
-import { DijeService } from 'src/app/services/dije.service';
+import { Dije } from '../../../models/dije';
+import { DijeService } from '../../../services/dije.service';
 
 @Component({
-  selector: 'app-dijes',
-  templateUrl: './dijes.component.html',
-  styleUrls: ['./dijes.component.css']
+    selector: 'app-dijes',
+    templateUrl: './dijes.component.html',
+    styleUrls: ['./dijes.component.css'],
+    standalone: false
 })
 export class DijesComponent implements OnInit {
   isLoading = false;

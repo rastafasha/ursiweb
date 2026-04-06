@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
-import { environment } from 'src/environments/environment';
 import { Publicacion } from '../models/publicacion';
+import { environment } from '../../environments/environment';
 const baseUrl = environment.apiUrl;
 
 @Injectable({

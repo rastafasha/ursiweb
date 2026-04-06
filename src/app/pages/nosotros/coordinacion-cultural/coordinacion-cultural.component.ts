@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-coordinacion-cultural',
-  templateUrl: './coordinacion-cultural.component.html',
-  styleUrls: ['./coordinacion-cultural.component.css']
+    selector: 'app-coordinacion-cultural',
+    templateUrl: './coordinacion-cultural.component.html',
+    styleUrls: ['./coordinacion-cultural.component.css'],
+    standalone: false
 })
 export class CoordinacionCulturalComponent implements OnInit{
 

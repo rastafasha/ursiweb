@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Post } from 'src/app/models/post';
-import { PostService } from 'src/app/services/post.service';
+import { Post } from '../../models/post';
+import { PostService } from '../../services/post.service';
 
 @Component({
-  selector: 'app-blog-featured',
-  templateUrl: './blog-featured.component.html',
-  styleUrls: ['./blog-featured.component.css']
+    selector: 'app-blog-featured',
+    templateUrl: './blog-featured.component.html',
+    styleUrls: ['./blog-featured.component.css'],
+    standalone: false
 })
 export class BlogFeaturedComponent implements OnInit{
   isLoading: boolean = false;

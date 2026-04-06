@@ -1,0 +1,1 @@
+# Task: Fix NgxPaginationModule Ivy Error\n\n## Steps:\n\n- [x] Switch to Node v22 using nvm\n- [x] Update ngx-pagination to latest (now v6.0.3)\n- [x] Clean install (rm node_modules, package-lock.json; npm install)\n- [x] Edit pages.module.ts to remove duplicate NgxPaginationModule\n- [ ] Test with `ng build`\n- [ ] Test serve `ng serve`\n

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/models/post';
-import { Category } from 'src/app/models/category';
-import { PostService } from 'src/app/services/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CategoryService } from 'src/app/services/category.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Category } from '../../../models/category';
+import { Post } from '../../../models/post';
+import { CategoryService } from '../../../services/category.service';
+import { PostService } from '../../../services/post.service';
 
 @Component({
-  selector: 'app-post-by-category',
-  templateUrl: './post-by-category.component.html',
-  styleUrls: ['./post-by-category.component.css']
+    selector: 'app-post-by-category',
+    templateUrl: './post-by-category.component.html',
+    styleUrls: ['./post-by-category.component.css'],
+    standalone: false
 })
 export class PostByCategoryComponent implements OnInit{
 

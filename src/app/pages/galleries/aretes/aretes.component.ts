@@ -1,12 +1,13 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Arete } from 'src/app/models/arete';
-import { AreteService } from 'src/app/services/arete.service';
+import { Arete } from '../../../models/arete';
+import { AreteService } from '../../../services/arete.service';
 
 @Component({
-  selector: 'app-aretes',
-  templateUrl: './aretes.component.html',
-  styleUrls: ['./aretes.component.css']
+    selector: 'app-aretes',
+    templateUrl: './aretes.component.html',
+    styleUrls: ['./aretes.component.css'],
+    standalone: false
 })
 export class AretesComponent implements OnInit {
 

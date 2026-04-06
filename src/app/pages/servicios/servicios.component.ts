@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, DomSanitizer } from '@angular/platform-browser';
-import { Servicio } from 'src/app/models/servicio';
 import { ServiciosService } from '../../services/servicios.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Servicio } from '../../models/servicio';
 
 @Component({
-  selector: 'app-servicios',
-  templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.css']
+    selector: 'app-servicios',
+    templateUrl: './servicios.component.html',
+    styleUrls: ['./servicios.component.css'],
+    standalone: false
 })
 export class ServiciosComponent implements OnInit{
   isLoading = false;

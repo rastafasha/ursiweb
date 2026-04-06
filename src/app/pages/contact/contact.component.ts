@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CmspageService } from '../../services/cmspage.service';
-import { Contact } from '../../models/contact';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css'],
+    standalone: false
 })
 export class ContactComponent implements OnInit {
   title = "Contacto"

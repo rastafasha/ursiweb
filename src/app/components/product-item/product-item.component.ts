@@ -1,16 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Curso } from 'src/app/models/curso';
-import { MessageService } from '../../services/message.service';
-import { User } from 'src/app/models/user';
-import { AccountService } from 'src/app/services/account.service';
-import { UserService } from 'src/app/services/user.service';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Curso } from '../../models/curso';
+import { User } from '../../models/user';
+import { MessageService } from '../../services/message.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+    selector: 'app-product-item',
+    templateUrl: './product-item.component.html',
+    styleUrls: ['./product-item.component.css'],
+    standalone: false
 })
 export class ProductItemComponent implements OnInit {
 
@@ -45,25 +44,6 @@ export class ProductItemComponent implements OnInit {
     // Send the product to the parent component for modal display (separate from cart)
     this.messageService.sendModalProduct(this.product);
   }
-
-  getUser(): void {
-    
-    // console.log(this.user.id);
-    
-  }
-
-  getUserServer(){
-    this.userService.getUserById(this.user.id).subscribe(
-      res =>{
-        this.user = res[0];
-        // error => this.error = error
-        // console.log(this.user);
-      }
-    );
-
-  }
-
-  
 
 
 }

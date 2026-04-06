@@ -1,4 +1,5 @@
-import { environment } from "src/environments/environment";
+
+import { environment } from "../../environments/environment";
 import { ServicioTitle } from "./serviciotitle";
 
 const base_url = environment.apiUrlMedia;

@@ -1,6 +1,6 @@
+import { environment } from "../../environments/environment";
 import { Curso } from "./curso";
 import { User } from "./user";
-import { environment } from "src/environments/environment";
 
 const base_url = environment.apiUrlMedia;
 

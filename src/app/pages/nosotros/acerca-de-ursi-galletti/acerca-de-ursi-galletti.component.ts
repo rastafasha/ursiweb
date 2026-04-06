@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-acerca-de-ursi-galletti',
-  templateUrl: './acerca-de-ursi-galletti.component.html',
-  styleUrls: ['./acerca-de-ursi-galletti.component.css']
+    selector: 'app-acerca-de-ursi-galletti',
+    templateUrl: './acerca-de-ursi-galletti.component.html',
+    styleUrls: ['./acerca-de-ursi-galletti.component.css'],
+    standalone: false
 })
 export class AcercaDeUrsiGallettiComponent implements OnInit{
 

@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Curso } from 'src/app/models/curso';
-import { CursosService } from 'src/app/services/cursos.service';
-import { MessageService } from 'src/app/services/message.service';
+import { Curso } from '../../../models/curso';
+import { CursosService } from '../../../services/cursos.service';
+import { MessageService } from '../../../services/message.service';
 
 @Component({
-  selector: 'app-curso',
-  templateUrl: './curso.component.html',
-  styleUrls: ['./curso.component.css']
+    selector: 'app-curso',
+    templateUrl: './curso.component.html',
+    styleUrls: ['./curso.component.css'],
+    standalone: false
 })
 export class CursoComponent implements OnInit {
   isLoading: boolean = false;

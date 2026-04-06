@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-esposiciones-individuales',
-  templateUrl: './esposiciones-individuales.component.html',
-  styleUrls: ['./esposiciones-individuales.component.css']
+    selector: 'app-esposiciones-individuales',
+    templateUrl: './esposiciones-individuales.component.html',
+    styleUrls: ['./esposiciones-individuales.component.css'],
+    standalone: false
 })
 export class EsposicionesIndividualesComponent implements OnInit{
 

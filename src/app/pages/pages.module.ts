@@ -44,13 +44,14 @@ import { PulserasComponent } from './galleries/pulseras/pulseras.component';
 import { CursoComponent } from './cursos/curso/curso.component';
 
 // pluggins
-import { NgxPaginationModule } from 'ngx-pagination';
+
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 // import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 // angular file uploader
-import { AngularFileUploaderModule } from 'angular-file-uploader';
+
 import { TranslateModule } from '@ngx-translate/core';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -124,9 +125,8 @@ import { TranslateModule } from '@ngx-translate/core';
     ShareButtonsModule,
     ShareIconsModule,
     // InfiniteScrollModule,
-    NgxPaginationModule,
-    AngularFileUploaderModule,
-    TranslateModule
+    TranslateModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }

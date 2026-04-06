@@ -9,7 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AuthInterceptor } from './http-interceptors/auth-interceptor';
 
 
@@ -25,7 +25,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { SharethisAngularModule } from 'sharethis-angular';
 
 // angular file uploader
-import { AngularFileUploaderModule } from 'angular-file-uploader';
+// import { AngularFileUploaderModule } from 'angular-file-uploader';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { TranslateModule, TranslateLoader, TranslateService, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translate/http-loader';
@@ -35,49 +35,36 @@ export function cargarTraductor(http: HttpClient) {
   return new TranslateHttpLoader();
 }
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    PagesModule,
-    ComponentsModule,
-    NgxPayPalModule,
-    NgbModule,
-    NgxSpinnerModule,
-    HttpClientModule,
-    AuthModule,
-    SharethisAngularModule,
-    NgxPaginationModule,
-    AngularFileUploaderModule,
-    ScrollingModule,
-    TranslateModule.forRoot({
-      loader: {
-          provide: TranslateLoader,
-          useFactory: cargarTraductor,
-          deps: [HttpClient]
-      }
-    })
-
-  ],
-  providers: [
-    {
-      provide: TRANSLATE_HTTP_LOADER_CONFIG,
-      useValue: {
-        prefix: '../../assets/i18n/',
-        suffix: '.json'
-      }
-    },
-    // httpInterceptorProvidßers,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true
-    // }
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        PagesModule,
+        ComponentsModule,
+        NgxPayPalModule,
+        NgbModule,
+        NgxSpinnerModule,
+        AuthModule,
+        SharethisAngularModule,
+        NgxPaginationModule,
+        // AngularFileUploaderModule,
+        ScrollingModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: cargarTraductor,
+                deps: [HttpClient]
+            }
+        })], providers: [
+        {
+            provide: TRANSLATE_HTTP_LOADER_CONFIG,
+            useValue: {
+                prefix: '../../assets/i18n/',
+                suffix: '.json'
+            }
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule { }

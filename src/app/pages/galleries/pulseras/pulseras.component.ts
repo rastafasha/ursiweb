@@ -1,12 +1,13 @@
 import { HttpBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Pulsera } from 'src/app/models/pulsera';
-import { PulseraService } from 'src/app/services/pulsera.service';
+import { Pulsera } from '../../../models/pulsera';
+import { PulseraService } from '../../../services/pulsera.service';
 
 @Component({
-  selector: 'app-pulseras',
-  templateUrl: './pulseras.component.html',
-  styleUrls: ['./pulseras.component.css']
+    selector: 'app-pulseras',
+    templateUrl: './pulseras.component.html',
+    styleUrls: ['./pulseras.component.css'],
+    standalone: false
 })
 export class PulserasComponent implements OnInit {
   isLoading = false;

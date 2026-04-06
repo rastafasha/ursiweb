@@ -1,16 +1,17 @@
 import { Input, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling'
-import { CursosService } from 'src/app/services/cursos.service';
-import { Curso } from 'src/app/models/curso';
-import { MessageService } from 'src/app/services/message.service';
-import { UserService } from 'src/app/services/user.service';
-import { User } from 'src/app/models/user';
+import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
+import { Curso } from '../../models/curso';
+import { User } from '../../models/user';
+import { CursosService } from '../../services/cursos.service';
+import { MessageService } from '../../services/message.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-virtual',
-  templateUrl: './virtual.component.html',
-  styleUrls: ['./virtual.component.css']
+    selector: 'app-virtual',
+    templateUrl: './virtual.component.html',
+    styleUrls: ['./virtual.component.css'],
+    standalone: false
 })
 export class VirtualComponent implements OnInit {
 
