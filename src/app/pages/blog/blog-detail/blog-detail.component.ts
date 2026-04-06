@@ -27,7 +27,7 @@ export class BlogDetailComponent implements OnInit {
     private blogService: PostService,
     public translate: TranslateService
   ) { }
-
+ß
   ngOnInit() {
 
     window.scrollTo(0, 0);
@@ -38,7 +38,6 @@ export class BlogDetailComponent implements OnInit {
     this.blogService.getPostBySlug(this.slug).subscribe(
       res => {
         this.post = res[0];
-        console.log(this.post);
       }
     );
 
